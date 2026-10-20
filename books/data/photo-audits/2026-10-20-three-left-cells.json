@@ -1,0 +1,1644 @@
+{
+  "id": "2026-10-20-three-left-cells",
+  "beforeCount": 207,
+  "afterCount": 223,
+  "photos": {
+    "3L": "image-1792515757163.jpg",
+    "4L": "image-1792515765643.jpg",
+    "5L": "image-1792515802408.jpg"
+  },
+  "changes": [
+    {
+      "action": "update",
+      "id": "book-98",
+      "before": {
+        "t": "The Art Of Public Speaking",
+        "a": "Dale Carnegie with J. Berg Esenwein",
+        "d": "An early Carnegie text on building confidence and skill in public speaking.",
+        "id": "book-98",
+        "added": false,
+        "status": "review",
+        "shelf": "1L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Art Of Public Speaking",
+        "a": "Dale Carnegie with J. Berg Esenwein",
+        "d": "An early Carnegie text on building confidence and skill in public speaking.",
+        "id": "book-98",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "5L",
+        "note": "Title and shelf confirmed in the row 5, left close-up."
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-99",
+      "before": {
+        "t": "The Quick & Easy Way To Effective Speaking",
+        "a": "Dale Carnegie",
+        "d": "A practical, exercise-driven guide to overcoming nerves and speaking persuasively.",
+        "id": "book-99",
+        "added": false,
+        "status": "review",
+        "shelf": "1L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Quick & Easy Way To Effective Speaking",
+        "a": "Dale Carnegie",
+        "d": "A practical, exercise-driven guide to overcoming nerves and speaking persuasively.",
+        "id": "book-99",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "5L",
+        "note": "Title and shelf confirmed in the row 5, left close-up."
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-155",
+      "before": {
+        "t": "The Richest Man In Babylon",
+        "a": "George S. Clason",
+        "d": "Parables set in ancient Babylon teaching foundational personal finance principles.",
+        "id": "book-155",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Richest Man In Babylon",
+        "a": "George S. Clason",
+        "d": "Parables set in ancient Babylon teaching foundational personal finance principles.",
+        "id": "book-155",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "5L",
+        "note": "Title and shelf confirmed in the row 5, left close-up."
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-156",
+      "before": {
+        "t": "World's Greatest Books For Personal Growth & Wealth (box set)",
+        "a": "Various",
+        "d": "A boxed collection pairing several classic self-help and wealth-building titles.",
+        "id": "book-156",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "World's Greatest Books For Personal Growth & Wealth (box set)",
+        "a": "Various",
+        "d": "A boxed collection pairing several classic self-help and wealth-building titles.",
+        "id": "book-156",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-157",
+      "before": {
+        "t": "The Ten Types Of Human",
+        "a": "Dexter Dias",
+        "d": "A human-rights barrister explores the psychological traits that drive both cruelty and moral courage.",
+        "id": "book-157",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Ten Types Of Human",
+        "a": "Dexter Dias",
+        "d": "A human-rights barrister explores the psychological traits that drive both cruelty and moral courage.",
+        "id": "book-157",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-158",
+      "before": {
+        "t": "The Dale Carnegie Anthology (Set Of 5 Books)",
+        "a": "Dale Carnegie",
+        "d": "A boxed set collecting five of Carnegie's core titles on communication, confidence, and influence.",
+        "id": "book-158",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Dale Carnegie Anthology (Set Of 5 Books)",
+        "a": "Dale Carnegie",
+        "d": "A boxed set collecting five of Carnegie's core titles on communication, confidence, and influence.",
+        "id": "book-158",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-159",
+      "before": {
+        "t": "Leonardo Da Vinci",
+        "a": "Walter Isaacson",
+        "d": "A biography connecting da Vinci's art, science, and insatiable curiosity as one unified creative genius.",
+        "id": "book-159",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "Leonardo Da Vinci",
+        "a": "Walter Isaacson",
+        "d": "A biography connecting da Vinci's art, science, and insatiable curiosity as one unified creative genius.",
+        "id": "book-159",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-160",
+      "before": {
+        "t": "Benjamin Franklin",
+        "a": "Walter Isaacson",
+        "d": "A biography of Franklin as the era's most practical, versatile Founding Father.",
+        "id": "book-160",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "Benjamin Franklin",
+        "a": "Walter Isaacson",
+        "d": "A biography of Franklin as the era's most practical, versatile Founding Father.",
+        "id": "book-160",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-161",
+      "before": {
+        "t": "The Code",
+        "a": "Margaret O'Mara",
+        "d": "A history of Silicon Valley, tracing how government, universities, and venture capital built the tech industry.",
+        "id": "book-161",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "The Code",
+        "a": "Margaret O'Mara",
+        "d": "A history of Silicon Valley, tracing how government, universities, and venture capital built the tech industry.",
+        "id": "book-161",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-162",
+      "before": {
+        "t": "Sapiens",
+        "a": "Yuval Noah Harari",
+        "d": "A sweeping history of Homo sapiens, arguing shared myths and stories enabled large-scale cooperation.",
+        "id": "book-162",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "Sapiens",
+        "a": "Yuval Noah Harari",
+        "d": "A sweeping history of Homo sapiens, arguing shared myths and stories enabled large-scale cooperation.",
+        "id": "book-162",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-163",
+      "before": {
+        "t": "Homo Deus",
+        "a": "Yuval Noah Harari",
+        "d": "Harari's follow-up to Sapiens, speculating on humanity's future with AI, biotech, and data.",
+        "id": "book-163",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Homo Deus",
+        "a": "Yuval Noah Harari",
+        "d": "Harari's follow-up to Sapiens, speculating on humanity's future with AI, biotech, and data.",
+        "id": "book-163",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-164",
+      "before": {
+        "t": "Bhagavad Gita As It Is",
+        "a": "A.C. Bhaktivedanta Swami Prabhupada",
+        "d": "A widely distributed translation and commentary on the Bhagavad Gita from a Krishna-devotional (ISKCON) perspective.",
+        "id": "book-164",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Bhagavad Gita As It Is",
+        "a": "A.C. Bhaktivedanta Swami Prabhupada",
+        "d": "A widely distributed translation and commentary on the Bhagavad Gita from a Krishna-devotional (ISKCON) perspective.",
+        "id": "book-164",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-165",
+      "before": {
+        "t": "Born To Build",
+        "a": "Jim Clifton & Sangeetha Badal",
+        "d": "A guide, drawing on Gallup research, for identifying and developing natural entrepreneurial talent.",
+        "id": "book-165",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Born To Build",
+        "a": "Jim Clifton & Sangeetha Badal",
+        "d": "A guide, drawing on Gallup research, for identifying and developing natural entrepreneurial talent.",
+        "id": "book-165",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-166",
+      "before": {
+        "t": "Ground Rules",
+        "a": "Jeremy Miller",
+        "d": "Distills Warren Buffett's early investing letters into timeless principles for value investing.",
+        "id": "book-166",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Ground Rules",
+        "a": "Jeremy Miller",
+        "d": "Distills Warren Buffett's early investing letters into timeless principles for value investing.",
+        "id": "book-166",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-167",
+      "before": {
+        "t": "The Midnight Library",
+        "a": "Matt Haig",
+        "d": "A novel where a woman explores infinite alternate lives through a library between life and death.",
+        "id": "book-167",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Midnight Library",
+        "a": "Matt Haig",
+        "d": "A novel where a woman explores infinite alternate lives through a library between life and death.",
+        "id": "book-167",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-168",
+      "before": {
+        "t": "Limitless",
+        "a": "Jim Kwik",
+        "d": "A guide to improving memory, focus, and learning speed by overcoming self-limiting beliefs about the brain.",
+        "id": "book-168",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Limitless",
+        "a": "Jim Kwik",
+        "d": "A guide to improving memory, focus, and learning speed by overcoming self-limiting beliefs about the brain.",
+        "id": "book-168",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-169",
+      "before": {
+        "t": "The 4-Hour Work Week",
+        "a": "Timothy Ferriss",
+        "d": "Ferriss's playbook for automating income and escaping traditional 9-to-5 work through lifestyle design.",
+        "id": "book-169",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The 4-Hour Work Week",
+        "a": "Timothy Ferriss",
+        "d": "Ferriss's playbook for automating income and escaping traditional 9-to-5 work through lifestyle design.",
+        "id": "book-169",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-170",
+      "before": {
+        "t": "Originals",
+        "a": "Adam Grant",
+        "d": "Examines how nonconformists drive innovation and champion new ideas despite risk.",
+        "id": "book-170",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Originals",
+        "a": "Adam Grant",
+        "d": "Examines how nonconformists drive innovation and champion new ideas despite risk.",
+        "id": "book-170",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-171",
+      "before": {
+        "t": "Introducing Quantum Theory",
+        "a": "J.P. McEvoy & Oscar Zarate",
+        "d": "An illustrated, accessible primer on the history and core ideas of quantum physics.",
+        "id": "book-171",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Introducing Quantum Theory",
+        "a": "J.P. McEvoy & Oscar Zarate",
+        "d": "An illustrated, accessible primer on the history and core ideas of quantum physics.",
+        "id": "book-171",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-172",
+      "before": {
+        "t": "Who Will Cry When You Die?",
+        "a": "Robin Sharma",
+        "d": "Short, reflective life lessons framed around living so as to be remembered well.",
+        "id": "book-172",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Who Will Cry When You Die?",
+        "a": "Robin Sharma",
+        "d": "Short, reflective life lessons framed around living so as to be remembered well.",
+        "id": "book-172",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "A blue Robin Sharma spine is visible in row 4, left, but the title is obscured. Original title and inferred location retained pending confirmation."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-173",
+      "before": {
+        "t": "A Taste Of Well-Being",
+        "a": "Isha Yoga Centre",
+        "d": "A cookbook/wellness guide from the Isha Yoga Centre pairing recipes with yogic wellness principles.",
+        "id": "book-173",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "A Taste Of Well-Being",
+        "a": "Isha Yoga Centre",
+        "d": "A cookbook/wellness guide from the Isha Yoga Centre pairing recipes with yogic wellness principles.",
+        "id": "book-173",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-174",
+      "before": {
+        "t": "Corporate Chanakya",
+        "a": "Radhakrishnan Pillai",
+        "d": "Applies the ancient Indian strategist Chanakya's principles to modern management and leadership.",
+        "id": "book-174",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Corporate Chanakya",
+        "a": "Radhakrishnan Pillai",
+        "d": "Applies the ancient Indian strategist Chanakya's principles to modern management and leadership.",
+        "id": "book-174",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-175",
+      "before": {
+        "t": "Measure What Matters",
+        "a": "John Doerr",
+        "d": "Introduces the OKR (Objectives and Key Results) goal-setting system used by Google and other major companies.",
+        "id": "book-175",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Measure What Matters",
+        "a": "John Doerr",
+        "d": "Introduces the OKR (Objectives and Key Results) goal-setting system used by Google and other major companies.",
+        "id": "book-175",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-176",
+      "before": {
+        "t": "Tuesdays With Morrie",
+        "a": "Mitch Albom",
+        "d": "A memoir of the author's weekly visits with his dying former professor, Morrie Schwartz, on life's big questions.",
+        "id": "book-176",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Tuesdays With Morrie",
+        "a": "Mitch Albom",
+        "d": "A memoir of the author's weekly visits with his dying former professor, Morrie Schwartz, on life's big questions.",
+        "id": "book-176",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-177",
+      "before": {
+        "t": "The Power Of Positive Thinking",
+        "a": "Norman Vincent Peale",
+        "d": "A foundational self-help classic on using faith and positive thought to overcome adversity.",
+        "id": "book-177",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Power Of Positive Thinking",
+        "a": "Norman Vincent Peale",
+        "d": "A foundational self-help classic on using faith and positive thought to overcome adversity.",
+        "id": "book-177",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-178",
+      "before": {
+        "t": "The Art Of Clear Thinking",
+        "a": "Patrick King",
+        "d": "A short guide to identifying and correcting common cognitive biases and reasoning errors.",
+        "id": "book-178",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Art Of Clear Thinking",
+        "a": "Patrick King",
+        "d": "A short guide to identifying and correcting common cognitive biases and reasoning errors.",
+        "id": "book-178",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-179",
+      "before": {
+        "t": "Innovative Teams: 20-Minute Manager",
+        "a": "Harvard Business Review",
+        "d": "A short HBR primer on building and leading teams that generate innovative ideas.",
+        "id": "book-179",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Innovative Teams: 20-Minute Manager",
+        "a": "Harvard Business Review",
+        "d": "A short HBR primer on building and leading teams that generate innovative ideas.",
+        "id": "book-179",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-180",
+      "before": {
+        "t": "Delegating Work: 20-Minute Manager",
+        "a": "Harvard Business Review",
+        "d": "A concise HBR guide to delegating effectively without losing control of outcomes.",
+        "id": "book-180",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Delegating Work: 20-Minute Manager",
+        "a": "Harvard Business Review",
+        "d": "A concise HBR guide to delegating effectively without losing control of outcomes.",
+        "id": "book-180",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-181",
+      "before": {
+        "t": "Black Holes: The BBC Reith Lectures",
+        "a": "Stephen Hawking",
+        "d": "Transcripts of Hawking's BBC Reith Lectures explaining black holes to a general audience.",
+        "id": "book-181",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Black Holes: The BBC Reith Lectures",
+        "a": "Stephen Hawking",
+        "d": "Transcripts of Hawking's BBC Reith Lectures explaining black holes to a general audience.",
+        "id": "book-181",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-182",
+      "before": {
+        "t": "True Education",
+        "a": "Swami Vivekananda",
+        "d": "Vivekananda's writings on education as character-building and self-realization, not mere information transfer.",
+        "id": "book-182",
+        "added": false,
+        "status": "review",
+        "shelf": "4L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "True Education",
+        "a": "Swami Vivekananda",
+        "d": "Vivekananda's writings on education as character-building and self-realization, not mere information transfer.",
+        "id": "book-182",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "4L",
+        "note": "Title and shelf confirmed in the row 4, left close-up. Existing bibliographic details retained."
+      },
+      "source": "image-1792515765643.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-183",
+      "before": {
+        "t": "Tribe Of Mentors",
+        "a": "Timothy Ferriss",
+        "d": "Short, tactical advice from hundreds of high-achievers, answering the same set of Ferriss's questions.",
+        "id": "book-183",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "Tribe Of Mentors",
+        "a": "Timothy Ferriss",
+        "d": "Short, tactical advice from hundreds of high-achievers, answering the same set of Ferriss's questions.",
+        "id": "book-183",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-184",
+      "before": {
+        "t": "Bitcoin Billionaires",
+        "a": "Ben Mezrich",
+        "d": "Follows the Winklevoss twins from the Facebook lawsuit into early, high-stakes Bitcoin investing.",
+        "id": "book-184",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Bitcoin Billionaires",
+        "a": "Ben Mezrich",
+        "d": "Follows the Winklevoss twins from the Facebook lawsuit into early, high-stakes Bitcoin investing.",
+        "id": "book-184",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-185",
+      "before": {
+        "t": "The Code Of The Extraordinary Mind",
+        "a": "Vishen Lakhiani",
+        "d": "Challenges conventional 'rules' of success, encouraging readers to question inherited assumptions about life.",
+        "id": "book-185",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Code Of The Extraordinary Mind",
+        "a": "Vishen Lakhiani",
+        "d": "Challenges conventional 'rules' of success, encouraging readers to question inherited assumptions about life.",
+        "id": "book-185",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-186",
+      "before": {
+        "t": "Alibaba",
+        "a": "Duncan Clark",
+        "d": "A history of Alibaba and Jack Ma's rise, from a Hangzhou apartment to global e-commerce giant.",
+        "id": "book-186",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "Alibaba",
+        "a": "Duncan Clark",
+        "d": "A history of Alibaba and Jack Ma's rise, from a Hangzhou apartment to global e-commerce giant.",
+        "id": "book-186",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-187",
+      "before": {
+        "t": "Crushing It!",
+        "a": "Gary Vaynerchuk",
+        "d": "A follow-up to Crush It, updated with newer social platforms and personal-branding case studies.",
+        "id": "book-187",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Crushing It!",
+        "a": "Gary Vaynerchuk",
+        "d": "A follow-up to Crush It, updated with newer social platforms and personal-branding case studies.",
+        "id": "book-187",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-188",
+      "before": {
+        "t": "The 5 AM Club",
+        "a": "Robin Sharma",
+        "d": "A novel-format guide promoting a 5 a.m. wake routine to reclaim time for focus and growth.",
+        "id": "book-188",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The 5 AM Club",
+        "a": "Robin Sharma",
+        "d": "A novel-format guide promoting a 5 a.m. wake routine to reclaim time for focus and growth.",
+        "id": "book-188",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-189",
+      "before": {
+        "t": "Elon Musk",
+        "a": "Ashlee Vance",
+        "d": "A biography of Elon Musk covering PayPal, Tesla, and SpaceX, based on extensive access and interviews.",
+        "id": "book-189",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf are readable in the supplied photo."
+      },
+      "after": {
+        "t": "Elon Musk",
+        "a": "Ashlee Vance",
+        "d": "A biography of Elon Musk covering PayPal, Tesla, and SpaceX, based on extensive access and interviews.",
+        "id": "book-189",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-190",
+      "before": {
+        "t": "The Everyday Hero Manifesto",
+        "a": "Robin Sharma",
+        "d": "Sharma's manifesto arguing that ordinary daily choices, done with excellence, constitute real heroism.",
+        "id": "book-190",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Everyday Hero Manifesto",
+        "a": "Robin Sharma",
+        "d": "Sharma's manifesto arguing that ordinary daily choices, done with excellence, constitute real heroism.",
+        "id": "book-190",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-191",
+      "before": {
+        "t": "Karma: A Yogi's Guide To Crafting Your Destiny",
+        "a": "Sadhguru",
+        "d": "Sadhguru reframes karma as an active, changeable force shaped by present choices, not fixed fate.",
+        "id": "book-191",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Karma: A Yogi's Guide To Crafting Your Destiny",
+        "a": "Sadhguru",
+        "d": "Sadhguru reframes karma as an active, changeable force shaped by present choices, not fixed fate.",
+        "id": "book-191",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-192",
+      "before": {
+        "t": "Essentialism",
+        "a": "Greg McKeown",
+        "d": "Argues for ruthlessly focusing on 'the vital few' priorities instead of spreading effort thin across everything.",
+        "id": "book-192",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Essentialism",
+        "a": "Greg McKeown",
+        "d": "Argues for ruthlessly focusing on 'the vital few' priorities instead of spreading effort thin across everything.",
+        "id": "book-192",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-193",
+      "before": {
+        "t": "Parallel Worlds",
+        "a": "Michio Kaku",
+        "d": "A popular-science exploration of multiverse theories and the ultimate fate of the cosmos.",
+        "id": "book-193",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Parallel Worlds",
+        "a": "Michio Kaku",
+        "d": "A popular-science exploration of multiverse theories and the ultimate fate of the cosmos.",
+        "id": "book-193",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-194",
+      "before": {
+        "t": "Thinking, Fast And Slow",
+        "a": "Daniel Kahneman",
+        "d": "Nobel laureate Kahneman explains two systems of thought — fast/intuitive and slow/deliberate — and their biases.",
+        "id": "book-194",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Thinking, Fast And Slow",
+        "a": "Daniel Kahneman",
+        "d": "Nobel laureate Kahneman explains two systems of thought — fast/intuitive and slow/deliberate — and their biases.",
+        "id": "book-194",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-195",
+      "before": {
+        "t": "The Art Of War",
+        "a": "Sun Tzu",
+        "d": "An ancient Chinese military treatise widely applied today to business strategy and competition.",
+        "id": "book-195",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Art Of War",
+        "a": "Sun Tzu",
+        "d": "An ancient Chinese military treatise widely applied today to business strategy and competition.",
+        "id": "book-195",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-196",
+      "before": {
+        "t": "Drive",
+        "a": "Daniel H. Pink",
+        "d": "Argues that autonomy, mastery, and purpose motivate people more than external rewards.",
+        "id": "book-196",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Drive",
+        "a": "Daniel H. Pink",
+        "d": "Argues that autonomy, mastery, and purpose motivate people more than external rewards.",
+        "id": "book-196",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-197",
+      "before": {
+        "t": "The Law Of Success In Sixteen Lessons",
+        "a": "Napoleon Hill",
+        "d": "Hill's original, longer precursor to Think and Grow Rich, structured as sixteen success lessons.",
+        "id": "book-197",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Law Of Success In Sixteen Lessons",
+        "a": "Napoleon Hill",
+        "d": "Hill's original, longer precursor to Think and Grow Rich, structured as sixteen success lessons.",
+        "id": "book-197",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-198",
+      "before": {
+        "t": "The Leader Who Had No Title",
+        "a": "Robin Sharma",
+        "d": "A parable arguing that leadership is about mindset and impact, not job title or position.",
+        "id": "book-198",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Leader Who Had No Title",
+        "a": "Robin Sharma",
+        "d": "A parable arguing that leadership is about mindset and impact, not job title or position.",
+        "id": "book-198",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-199",
+      "before": {
+        "t": "Adiyogi: The Source Of Yoga",
+        "a": "Sadhguru",
+        "d": "Sadhguru retells the mythology of Shiva as 'Adiyogi,' the first yogi and origin of yogic science.",
+        "id": "book-199",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Adiyogi: The Source Of Yoga",
+        "a": "Sadhguru",
+        "d": "Sadhguru retells the mythology of Shiva as 'Adiyogi,' the first yogi and origin of yogic science.",
+        "id": "book-199",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-200",
+      "before": {
+        "t": "The 100 Absolutely Unbreakable Laws Of Business Success",
+        "a": "Brian Tracy",
+        "d": "A list-format guide of core business principles Tracy considers universally applicable.",
+        "id": "book-200",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The 100 Absolutely Unbreakable Laws Of Business Success",
+        "a": "Brian Tracy",
+        "d": "A list-format guide of core business principles Tracy considers universally applicable.",
+        "id": "book-200",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-201",
+      "before": {
+        "t": "Influence: The Psychology Of Persuasion",
+        "a": "Robert B. Cialdini",
+        "d": "A landmark study of the psychological principles — reciprocity, scarcity, authority — behind persuasion.",
+        "id": "book-201",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Influence: The Psychology Of Persuasion",
+        "a": "Robert B. Cialdini",
+        "d": "A landmark study of the psychological principles — reciprocity, scarcity, authority — behind persuasion.",
+        "id": "book-201",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-202",
+      "before": {
+        "t": "The Rules Of Work",
+        "a": "Richard Templar",
+        "d": "An unwritten-rules guide to workplace success and career politics.",
+        "id": "book-202",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "The Rules Of Work",
+        "a": "Richard Templar",
+        "d": "An unwritten-rules guide to workplace success and career politics.",
+        "id": "book-202",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-203",
+      "before": {
+        "t": "Mystic's Musings",
+        "a": "Sadhguru",
+        "d": "A collection of Sadhguru's reflections and answers on spirituality, self, and daily life.",
+        "id": "book-203",
+        "added": false,
+        "status": "review",
+        "shelf": "3L",
+        "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+      },
+      "after": {
+        "t": "Mystic's Musings",
+        "a": "Sadhguru",
+        "d": "A collection of Sadhguru's reflections and answers on spirituality, self, and daily life.",
+        "id": "book-203",
+        "added": false,
+        "status": "confirmed",
+        "shelf": "3L",
+        "note": "Title and shelf confirmed in the row 3, left close-up. Existing author attribution retained where partly obscured."
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-204",
+      "before": {
+        "t": "Mindf*ck",
+        "a": "Christopher Wylie",
+        "d": "",
+        "id": "book-204",
+        "shelf": "5L",
+        "added": true,
+        "status": "confirmed",
+        "note": "New title identified from the bottom-left shelf."
+      },
+      "after": {
+        "t": "Mindf*ck",
+        "a": "Christopher Wylie",
+        "d": "",
+        "id": "book-204",
+        "shelf": "5L",
+        "added": true,
+        "status": "confirmed",
+        "note": "Title and shelf confirmed in the row 5, left close-up."
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "update",
+      "id": "book-205",
+      "before": {
+        "t": "Metahuman",
+        "a": "Deepak Chopra",
+        "d": "",
+        "id": "book-205",
+        "shelf": "5L",
+        "added": true,
+        "status": "confirmed",
+        "note": "New title identified from the bottom-left shelf."
+      },
+      "after": {
+        "t": "Metahuman",
+        "a": "Deepak Chopra",
+        "d": "",
+        "id": "book-205",
+        "shelf": "5L",
+        "added": true,
+        "status": "confirmed",
+        "note": "Title and shelf confirmed in the row 5, left close-up."
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "delete",
+      "id": "book-206",
+      "before": {
+        "t": "Emotional Intelligence",
+        "a": "Daniel Goleman",
+        "d": "",
+        "id": "book-206",
+        "shelf": "5L",
+        "added": true,
+        "status": "confirmed",
+        "note": "New title identified from the bottom-left shelf."
+      },
+      "reason": "Withdrawn: mistaken identification from the overview photograph; not supported by the row 5 close-up. Not part of the original 203-entry catalog."
+    },
+    {
+      "action": "delete",
+      "id": "book-207",
+      "before": {
+        "t": "SuperFreakonomics",
+        "a": "Steven D. Levitt & Stephen J. Dubner",
+        "d": "",
+        "id": "book-207",
+        "shelf": "5L",
+        "added": true,
+        "status": "review",
+        "note": "The bottom-right stack in the left compartment appears to contain this title. Confirm the cover and authors."
+      },
+      "reason": "Withdrawn: mistaken identification from the overview photograph; not supported by the row 5 close-up. Not part of the original 203-entry catalog."
+    },
+    {
+      "action": "create",
+      "id": "book-208",
+      "after": {
+        "id": "book-208",
+        "t": "Permanent Record",
+        "a": "Edward Snowden",
+        "shelf": "3L",
+        "status": "confirmed",
+        "d": "Edward Snowden's memoir about his life, intelligence work, and disclosures of mass surveillance.",
+        "note": "Title, author and shelf readable in the row 3, left close-up.",
+        "added": true
+      },
+      "source": "image-1792515757163.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-209",
+      "after": {
+        "id": "book-209",
+        "t": "First Reference for Young Readers (box set)",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "A boxed reference collection for young readers; individual volume details need confirmation.",
+        "note": "Box title and shelf are readable. Individual authors/editors and the volume list are not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-210",
+      "after": {
+        "id": "book-210",
+        "t": "Oxford English Language Reference (box set)",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "An Oxford English-language reference collection; exact contents and editors need confirmation.",
+        "note": "Box title and Oxford branding are readable; author/editor and individual volume details are not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-211",
+      "after": {
+        "id": "book-211",
+        "t": "The Greatest Story Ever Told... So Far",
+        "a": "Lawrence M. Krauss",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "An account of discoveries in fundamental physics and what they reveal about the universe.",
+        "note": "Title, author and shelf readable in the row 5, left close-up.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-212",
+      "after": {
+        "id": "book-212",
+        "t": "Loonshots",
+        "a": "Safi Bahcall",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "Explores how organizations can nurture unconventional ideas and breakthrough innovations.",
+        "note": "Title, author and shelf readable in the row 5, left close-up.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-213",
+      "after": {
+        "id": "book-213",
+        "t": "The Ride of a Lifetime",
+        "a": "Robert Iger",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "Robert Iger reflects on leadership and his time running The Walt Disney Company.",
+        "note": "Title, author and shelf readable in the row 5, left close-up.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-214",
+      "after": {
+        "id": "book-214",
+        "t": "The Young Explorer's Guide to the Universe",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "A reference guide to the universe for young readers.",
+        "note": "Title and shelf are readable; author/editor is not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-215",
+      "after": {
+        "id": "book-215",
+        "t": "Encyclopedia of Great Explorers",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "A reference work about explorers and exploration.",
+        "note": "Title and shelf are readable; author/editor is not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-216",
+      "after": {
+        "id": "book-216",
+        "t": "Whitaker's World of Facts",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "A general-knowledge reference about the world. Edition and editor need confirmation.",
+        "note": "Title and shelf are readable; author/editor and edition are not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-217",
+      "after": {
+        "id": "book-217",
+        "t": "Mathability",
+        "a": "Shakuntala Devi",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "A guide for parents to help children build confidence and interest in mathematics.",
+        "note": "Mathability and Shakuntala Devi are readable on the red-and-blue cover. The Math Genius wording is part of this same cover, not a separate book.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-218",
+      "after": {
+        "id": "book-218",
+        "t": "Disciplined Entrepreneurship",
+        "a": "Bill Aulet",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "A structured guide to building a startup through 24 steps.",
+        "note": "Title, author and shelf readable on the leaning blue spine.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-219",
+      "after": {
+        "id": "book-219",
+        "t": "Shoe Dog",
+        "a": "Phil Knight",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "Phil Knight's memoir of founding and building Nike.",
+        "note": "Title, author and shelf readable in the row 5, left close-up.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-220",
+      "after": {
+        "id": "book-220",
+        "t": "No Limits",
+        "a": "Mukesh Bansal",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "Examines habits, psychology, and practices for high performance.",
+        "note": "Mukesh Bansal and Limits are readable on the inverted spine. Full title is No Limits; subtitle is omitted.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-221",
+      "after": {
+        "id": "book-221",
+        "t": "English–English–Kannada Dictionary",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "An English–English–Kannada reference dictionary.",
+        "note": "Dictionary title and shelf are readable on the upper yellow volume; author/editor is not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-222",
+      "after": {
+        "id": "book-222",
+        "t": "Kannada–Kannada–English Dictionary",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "A Kannada–Kannada–English reference dictionary.",
+        "note": "Dictionary title and shelf are readable on the lower yellow volume; author/editor is not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-223",
+      "after": {
+        "id": "book-223",
+        "t": "Mathematics Quiz Book",
+        "a": "Rajiv Garg",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "A collection of mathematics quiz questions.",
+        "note": "Title, Rajiv Garg and shelf are readable on the pale green spine.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-224",
+      "after": {
+        "id": "book-224",
+        "t": "History Quiz Book",
+        "a": "Author/editor not visible",
+        "shelf": "5L",
+        "status": "review",
+        "d": "A collection of history quiz questions.",
+        "note": "Title and shelf are readable on the pink spine; author/editor is not visible.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    },
+    {
+      "action": "create",
+      "id": "book-225",
+      "after": {
+        "id": "book-225",
+        "t": "Methodology of Educational Research",
+        "a": "Bharti Sharma",
+        "shelf": "5L",
+        "status": "confirmed",
+        "d": "An introduction to research methods in education.",
+        "note": "Title, author and shelf readable on the bottom green spine.",
+        "added": true
+      },
+      "source": "image-1792515802408.jpg"
+    }
+  ],
+  "unresolved": [
+    "Row 4, left: the blue Robin Sharma spine does not clearly show its title; Who Will Cry When You Die? is retained as an unverified inherited entry.",
+    "Row 5, left: several reference books and dictionaries have no readable author/editor. They are cataloged by title and flagged for review.",
+    "The thin item behind the leaning entrepreneurship book and any fully covered spines cannot be identified.",
+    "Diary/notebook covers with no identifiable published title are not added as books.",
+    "Mathability and the Math Genius text belong to one book cover, counted once."
+  ]
+}

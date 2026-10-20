@@ -22,7 +22,7 @@ The Books app has its own Firebase Hosting site, so future ideas can live alongs
 
 ## Photo inventory
 
-The initial seed has 207 entries: 203 from the original HTML and 4 overview-photo additions, one tentative. Several titles and shelf locations remain unverified. This is **not a complete inventory**. Close-up compartment photographs are still required to resolve the unreadable spines; follow [the audit notes](books/data/PHOTO-AUDIT.md). Do not treat the tentative title as confirmed. Further verified books can be added through the shared editor interface or imported from JSON.
+The current catalog has **223 entries**: all 203 original entries, 2 valid overview-photo additions, and 18 missing titles identified in close-ups of rows 3/left, 4/left, and 5/left. Two mistaken overview readings (Emotional Intelligence and SuperFreakonomics) were withdrawn. Eight new entries have unreadable authors/editors and remain marked for review. This is still a partial inventory of the wardrobe. See the [audit notes](books/data/PHOTO-AUDIT.md) and [before/after change record](books/data/photo-audits/2026-10-20-three-left-cells.json).
 
 The initial catalog is stored in `books/data/catalog.json`, outside the public build. The admin seed script uploads it to Firestore and never overwrites an existing book with the same ID. This preserves edits and makes retrying a partially completed import safe.
 
@@ -103,3 +103,14 @@ Only theme preference is kept in browser local storage. Firestore data is held i
 ## Importing old browser edits
 
 On the old site, export the JSON catalog. Sign in on Books, choose the shared catalog as an editor or your private library, then use **Import & export → Import JSON catalog**. Importing updates matching IDs and adds new books while retaining other existing entries. Private and shared imports never cross catalog boundaries. For imports larger than one batch, completed batches remain on a failure and can be safely retried by book ID.
+
+## Applying reviewed photo corrections
+
+New seed records are created without overwriting existing records. Existing entries require the reviewed audit migration:
+
+```sh
+node scripts/apply-photo-audit.cjs books/data/photo-audits/2026-10-20-three-left-cells.json
+node scripts/apply-photo-audit.cjs books/data/photo-audits/2026-10-20-three-left-cells.json --apply
+```
+
+The first command is a dry run. The second commits the reviewed changes atomically, using update-time preconditions and conflict checks. Only audited fields are updated; unrelated descriptions are preserved. A withdrawn entry is deleted only if it still matches the original mistaken record. Private catalogs are never modified. Rerunning an applied audit is safe.

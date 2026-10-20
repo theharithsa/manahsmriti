@@ -4,6 +4,9 @@ const http = require('node:http');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const assert = require('node:assert/strict');
+const seed = JSON.parse(fs.readFileSync('books/data/catalog.json'));
+const total = seed.length;
+const lowerLeft = seed.filter(b => b.shelf === '5L').length;
 async function main() {
   const { initializeTestEnvironment } = await import('@firebase/rules-unit-testing');
   const { doc, setDoc, writeBatch, Timestamp } = await import('firebase/firestore');
@@ -62,7 +65,7 @@ async function main() {
     await owner.screenshot({ path: 'artifacts/sign-in-desktop.png' });
     await signIn(owner, 'theharithsa@gmail.com');
     await owner.locator('#add-button').waitFor({ state: 'visible' });
-    assert.equal(await owner.locator('.book-card').count(), 207);
+    assert.equal(await owner.locator('.book-card').count(), total);
     assert.equal(await owner.locator('.book-card svg').count(), 0);
     await owner.evaluate(() => document.fonts.ready);
     assert.equal(await owner.evaluate(() => document.fonts.check('16px "Roboto Variable"')), true);
@@ -111,7 +114,7 @@ async function main() {
     await reader.locator('#confirm-delete').click(); await reader.locator('#delete-dialog').waitFor({ state: 'hidden' });
     await readerOtherDevice.waitForFunction(() => document.getElementById('result-count').textContent === '2 of 2 books');
     await reader.locator('#search').fill(''); await reader.locator('#shared-tab').click();
-    await reader.waitForFunction(() => document.getElementById('result-count').textContent === '207 of 207 books');
+    await reader.waitForFunction(count => document.getElementById('result-count').textContent === `${count} of ${count} books`, total);
     await reader.screenshot({ path: 'artifacts/shared-library-mobile.png' });
     for (const width of [360, 390, 768, 1024, 1440]) {
       await reader.setViewportSize({ width, height: 1000 });
@@ -120,7 +123,7 @@ async function main() {
     await reader.setViewportSize({ width: 390, height: 1000 }); await reader.locator('#theme-button').click();
     await reader.screenshot({ path: 'artifacts/shared-library-dark.png' });
     await reader.locator('#map-button').click(); assert.equal(await reader.locator('.shelf-cell').count(), 10);
-    await reader.locator('[data-shelf="5L"]').click(); assert.equal(await reader.locator('.book-card').count(), 4);
+    await reader.locator('[data-shelf="5L"]').click(); assert.equal(await reader.locator('.book-card').count(), lowerLeft);
     await reader.locator('#account-button').click(); await reader.locator('#sign-out-button').click();
     await reader.locator('#sign-in-screen').waitFor({ state: 'visible' }); assert.equal(await reader.locator('.book-card').count(), 0);
     assert.deepEqual(errors, []);
