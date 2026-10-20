@@ -46,6 +46,12 @@ async function main() {
       await page.context().route(/^https:\/\/(unpkg\.com|fonts\.googleapis\.com|fonts\.gstatic\.com)\//, route => route.fulfill({status:200,contentType:route.request().url().endsWith('.js')?'application/javascript':'text/css',body:''}));
       await page.context().route('https://lh3.googleusercontent.com/test-avatar', route => route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aMegAAAAASUVORK5CYII=', 'base64') }));
       await page.goto('http://127.0.0.1:5174/');
+      await page.evaluate(() => {
+        const text = document.getElementById('welcome-text');
+        new MutationObserver(() => {
+          if (!document.getElementById('welcome-screen').hidden && text.textContent && text.textContent === document.getElementById('welcome-announcement').textContent) window.__thoughtCompletedAt = performance.now();
+        }).observe(text, { childList: true, characterData: true, subtree: true });
+      });
       const popupPromise = page.waitForEvent('popup');
       await page.locator('#sign-in-button').click();
       const popup = await popupPromise.catch(async e=>{console.log('SIGN IN ERROR',await page.locator('#sign-in-error').textContent());await page.screenshot({path:'artifacts/sign-in-failure.png'});throw e;});
@@ -71,6 +77,11 @@ async function main() {
         await page.screenshot({ path: 'artifacts/typewriter-reduced-motion-mobile.png' });
       } else {
         await page.locator('#skip-welcome').click();
+      }
+      if (email === 'theharithsa@gmail.com' || await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        await page.waitForFunction(() => document.getElementById('welcome-text').textContent === document.getElementById('welcome-announcement').textContent);
+        await page.locator('#library-screen').waitFor({ state: 'visible' });
+        assert.ok(await page.evaluate(() => performance.now() - window.__thoughtCompletedAt) >= 2990, 'The complete thought remains readable for at least three seconds');
       }
       await page.locator('#library-screen').waitFor({ state: 'visible' });
       assert.equal(await page.locator('#welcome-screen').isVisible(), false);
@@ -279,6 +290,12 @@ async function main() {
     assert.equal(await owner.locator('#account-photo').isVisible(), false);
     const previousThought = await owner.evaluate(() => sessionStorage.getItem('books-last-thought'));
     await owner.reload();
+    await owner.locator('#library-screen').waitFor({ state: 'visible' });
+    assert.equal(await owner.locator('#welcome-screen').isVisible(), false);
+    assert.equal(await owner.evaluate(() => sessionStorage.getItem('books-last-thought')), previousThought);
+    // Simulate a fresh tab session, retaining the previous thought to check rotation.
+    await owner.evaluate(() => sessionStorage.removeItem('books-welcome-seen'));
+    await owner.reload();
     await owner.locator('#welcome-screen').waitFor({ state: 'visible' });
     assert.notEqual(await owner.locator('#welcome-announcement').textContent(), previousThought);
     await owner.locator('#account-button').click(); await owner.locator('#sign-out-button').click();
@@ -287,7 +304,7 @@ async function main() {
     assert.equal(await owner.locator('#library-screen').isVisible(), false);
     assert.equal(await owner.locator('#welcome-screen').isVisible(), false);
     assert.deepEqual(errors, []);
-    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, compact chips, table/card switching, sortable table headers, pagination and saved page size, quick reading status, profile avatar/fallback, typewriter welcome with background catalog loading, skip, reduced motion, quote rotation and sign-out cancellation, 5 responsive widths, dark theme and sign-out clearing.');
+    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, compact chips, table/card switching, sortable table headers, pagination and saved page size, quick reading status, profile avatar/fallback, typewriter welcome with background catalog loading, skip, reduced motion, three-second reading time, session-only welcome, quote rotation and sign-out cancellation, 5 responsive widths, dark theme and sign-out clearing.');
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); await env.cleanup(); }
 }
 main().catch(error => { console.error(error); process.exit(1); });

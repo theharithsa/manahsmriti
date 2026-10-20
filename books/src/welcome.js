@@ -11,7 +11,9 @@ const thoughts = [
 ];
 
 export function createWelcome({ screen, text, announcement, library, skip, heading }) {
-  let timer, generation = 0;
+  let timer, generation = 0, shownThisSession = false;
+  const sessionKey = 'books-welcome-seen';
+  const readingDelay = 3000;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   function cancel() {
     ++generation; clearTimeout(timer); screen.hidden = true;
@@ -24,7 +26,13 @@ export function createWelcome({ screen, text, announcement, library, skip, headi
     if (moveFocus) heading.focus({ preventScroll: true });
   }
   function start() {
-    cancel(); library.hidden = true; screen.hidden = false;
+    cancel();
+    let seen = shownThisSession;
+    try { seen ||= sessionStorage.getItem(sessionKey) === 'true'; } catch { /* Use memory when storage is unavailable. */ }
+    if (seen) { library.hidden = false; return; }
+    shownThisSession = true;
+    try { sessionStorage.setItem(sessionKey, 'true'); } catch { /* Keep the in-memory marker. */ }
+    library.hidden = true; screen.hidden = false;
     let previous;
     try { previous = sessionStorage.getItem('books-last-thought'); } catch { /* Optional storage. */ }
     const choices = thoughts.filter(thought => thought !== previous);
@@ -36,18 +44,24 @@ export function createWelcome({ screen, text, announcement, library, skip, headi
     screen.classList.toggle('static-welcome', motion.matches);
     skip.focus({ preventScroll: true });
     const current = generation;
-    if (motion.matches) { timer = setTimeout(finish, 650); return; }
+    if (motion.matches) { timer = setTimeout(finish, readingDelay); return; }
     const characters = Array.from(thought);
     let index = 0;
     function type() {
       if (current !== generation) return;
       text.textContent = characters.slice(0, ++index).join('');
       timer = setTimeout(index < characters.length ? type : finish,
-        index < characters.length ? 28 + Math.random() * 12 : 700);
+        index < characters.length ? 28 + Math.random() * 12 : readingDelay);
     }
     timer = setTimeout(type, 120);
   }
   skip.addEventListener('click', finish);
-  motion.addEventListener('change', () => { if (!screen.hidden) finish(); });
+  motion.addEventListener('change', () => {
+    if (screen.hidden) return;
+    ++generation; clearTimeout(timer);
+    text.textContent = announcement.textContent;
+    screen.classList.toggle('static-welcome', motion.matches);
+    timer = setTimeout(finish, readingDelay);
+  });
   return { start, cancel };
 }
