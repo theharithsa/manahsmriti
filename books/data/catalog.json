@@ -1,0 +1,2072 @@
+[
+  {
+    "t": "The Greatest Secret",
+    "a": "Rhonda Byrne",
+    "d": "A follow-up to The Secret, exploring consciousness and presence through teachings from various spiritual masters.",
+    "id": "book-1",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Profit With Social Media",
+    "a": "Benita Bhatia Dua & Deepa Jayaraman",
+    "d": "A practical guide to using social media platforms to grow and monetize a business, aimed at an Indian audience.",
+    "id": "book-2",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Boy, The Mole, The Fox & The Horse",
+    "a": "Charlie Mackesy",
+    "d": "An illustrated fable about friendship, kindness, and vulnerability, told through gentle conversations between four characters.",
+    "id": "book-3",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Artist's Way",
+    "a": "Julia Cameron",
+    "d": "A 12-week program for unlocking creativity through daily writing exercises and weekly self-guided 'artist dates.'",
+    "id": "book-4",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Life's Amazing Secrets",
+    "a": "Gaur Gopal Das",
+    "d": "A monk-turned-life-coach shares accessible wisdom on finding purpose, balance, and happiness in everyday life.",
+    "id": "book-5",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Big Questions Of Life",
+    "a": "Om Swami",
+    "d": "A spiritual teacher reflects on life's deepest questions — meaning, suffering, and the search for truth.",
+    "id": "book-6",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Mindset",
+    "a": "Dr. Carol S. Dweck",
+    "d": "Introduces the 'fixed' vs 'growth' mindset framework and how our beliefs about ability shape success.",
+    "id": "book-7",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Connect The Dots",
+    "a": "Rashmi Bansal",
+    "d": "Profiles of Indian entrepreneurs who built businesses without formal MBA training, told as first-person stories.",
+    "id": "book-8",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Harry Potter & The Cursed Child",
+    "a": "JK Rowling",
+    "d": "A stage-play script continuing Harry Potter's story into adulthood, focused on his son Albus.",
+    "id": "book-9",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Think Like A Monk",
+    "a": "Jay Shetty",
+    "d": "A former monk distills ancient wisdom into modern habits for overcoming negativity and finding purpose.",
+    "id": "book-10",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Discover Your Destiny",
+    "a": "Robin Sharma",
+    "d": "A parable-style self-help book about uncovering one's life purpose through eight timeless lessons.",
+    "id": "book-11",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Eat That Frog",
+    "a": "Brian Tracy",
+    "d": "A concise productivity book on tackling your hardest, most important task first each day.",
+    "id": "book-12",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Relativity",
+    "a": "Albert Einstein",
+    "d": "Einstein's own plain-language explanation of special and general relativity, written for a general audience.",
+    "id": "book-13",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The 80/20 Principle",
+    "a": "Richard Koch",
+    "d": "Applies the Pareto principle — that 80% of results come from 20% of efforts — to work and life.",
+    "id": "book-14",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Book Of Life",
+    "a": "J. Krishnamurti",
+    "d": "A daily-reading compilation of Krishnamurti's teachings on self-awareness, freedom, and the nature of thought.",
+    "id": "book-15",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "What Are You Doing With Your Life",
+    "a": "J. Krishnamurti",
+    "d": "Talks and dialogues by Krishnamurti probing education, fear, and living without psychological conditioning.",
+    "id": "book-16",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Autobiography Of A Yogi",
+    "a": "Paramahansa Yogananda",
+    "d": "A classic spiritual memoir introducing Kriya Yoga and Eastern meditation to Western readers.",
+    "id": "book-17",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Communication Book",
+    "a": "Mikael Krogerus & Roman Tschäppeler",
+    "d": "A visual, diagram-driven guide to communication models and interpersonal dynamics.",
+    "id": "book-18",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Question Book",
+    "a": "Mikael Krogerus & Roman Tschäppeler",
+    "d": "A collection of thought-provoking questions designed to prompt self-reflection, in the same visual style as its companion books.",
+    "id": "book-19",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Decision Book",
+    "a": "Mikael Krogerus & Roman Tschäppeler",
+    "d": "Fifty decision-making models presented as simple diagrams for personal and business choices.",
+    "id": "book-20",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Zen – The Art Of Simple Living",
+    "a": "Shunmyo Masuno",
+    "d": "A Zen Buddhist monk offers short, practical tips for decluttering the mind and daily life.",
+    "id": "book-21",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Ikigai",
+    "a": "Hector Garcia & Francesc Miralles",
+    "d": "Explores the Japanese concept of ikigai — one's 'reason for being' — through interviews with long-lived Okinawans.",
+    "id": "book-22",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Stillness Is The Key",
+    "a": "Ryan Holiday",
+    "d": "Draws on Stoic and other philosophical traditions to argue that inner stillness is the key to clarity and success.",
+    "id": "book-23",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Memory: How To Develop, Train, And Use It",
+    "a": "William Walker Atkinson",
+    "d": "An early 20th-century self-help classic on memory techniques and mental training.",
+    "id": "book-24",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Success Through A Positive Mental Attitude",
+    "a": "Napoleon Hill & W. Clement Stone",
+    "d": "A companion to Think and Grow Rich, focused on cultivating a positive attitude as the foundation of achievement.",
+    "id": "book-25",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Learning How To Fly",
+    "a": "APJ Abdul Kalam",
+    "d": "India's former president reflects on aspiration, resilience, and lessons for young people.",
+    "id": "book-26",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Reflections",
+    "a": "Swami Vivekananda",
+    "d": "A collection of Swami Vivekananda's reflections and teachings on spirituality, self-realization, and service.",
+    "id": "book-27",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Crush It!",
+    "a": "Gary Vaynerchuk",
+    "d": "An early manifesto on building a personal brand and business online by pursuing your passions.",
+    "id": "book-28",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Attitude Is Everything",
+    "a": "Jeff Keller",
+    "d": "A short motivational book arguing that attitude, more than circumstance, determines life outcomes.",
+    "id": "book-29",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Unfuck Yourself",
+    "a": "Gary John Bishop",
+    "d": "Blunt, no-nonsense self-talk mantras aimed at breaking self-sabotaging thought patterns.",
+    "id": "book-30",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Zero To One",
+    "a": "Peter Thiel",
+    "d": "Thiel's contrarian take on startups, arguing true innovation means creating something new, not copying what works.",
+    "id": "book-31",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Who Says You Can't? You Do",
+    "a": "Daniel Chidiac",
+    "d": "A motivational book on overcoming self-imposed limitations to pursue an extraordinary life.",
+    "id": "book-32",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Good Strategy Bad Strategy",
+    "a": "Richard Rumelt",
+    "d": "Distinguishes real strategy — diagnosis, guiding policy, coherent action — from vague goal-setting dressed up as strategy.",
+    "id": "book-33",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Wisdom Of Morrie",
+    "a": "Morrie Schwartz",
+    "d": "Reflections on living and dying well, by the same Morrie Schwartz featured in Tuesdays with Morrie.",
+    "id": "book-34",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The 4 Disciplines Of Execution",
+    "a": "Chris McChesney, Sean Covey, Jim Huling",
+    "d": "A framework for executing on strategic goals amid the 'whirlwind' of daily operational work.",
+    "id": "book-35",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Future Of Humanity",
+    "a": "Michio Kaku",
+    "d": "A physicist's speculative look at space colonization, interstellar travel, and humanity's long-term future.",
+    "id": "book-36",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "8 Rules Of Love",
+    "a": "Jay Shetty",
+    "d": "Jay Shetty's guide to modern relationships, covering finding, building, and sometimes letting go of love.",
+    "id": "book-37",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "On Right Livelihood",
+    "a": "J. Krishnamurti",
+    "d": "Krishnamurti's talks on work, vocation, and living ethically without conforming to societal pressure.",
+    "id": "book-38",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The God Equation",
+    "a": "Michio Kaku",
+    "d": "A history of physics' hunt for a 'theory of everything,' from Einstein to string theory.",
+    "id": "book-39",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Man's Search For Meaning",
+    "a": "Viktor Frankl",
+    "d": "A Holocaust survivor's memoir and introduction to logotherapy — finding meaning even amid extreme suffering.",
+    "id": "book-40",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Kubernetes Book",
+    "a": "Nigel Poulton",
+    "d": "A practical, widely used introduction to Kubernetes container orchestration for engineers.",
+    "id": "book-41",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "DevOps For Dummies",
+    "a": "Emily Freeman",
+    "d": "A beginner-friendly overview of DevOps culture, practices, and tooling for software teams.",
+    "id": "book-42",
+    "added": false,
+    "status": "review",
+    "shelf": "2R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Death",
+    "a": "Sadhguru",
+    "d": "Sadhguru's perspective on mortality, offering a spiritual reframing of death as part of life's continuum.",
+    "id": "book-43",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "1R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Why Not Have Jazz In Life?",
+    "a": "Sonia Sarkar",
+    "d": "A lesser-known title on embracing spontaneity and creativity in everyday living, in the spirit of jazz improvisation.",
+    "id": "book-44",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Stephen Hawking: A Life In Science",
+    "a": "Michael White & John Gribbin",
+    "d": "A biography tracing Hawking's scientific career alongside his personal life and illness.",
+    "id": "book-45",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Comfort Book",
+    "a": "Matt Haig",
+    "d": "A collection of short, comforting reflections, lists, and reminders for hard times, from the author of Reasons to Stay Alive.",
+    "id": "book-46",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Good Vibes, Good Life",
+    "a": "Vex King",
+    "d": "A self-love and mindfulness guide blending affirmations with practical advice on overcoming negativity.",
+    "id": "book-47",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "21 Lessons For The 21st Century",
+    "a": "Yuval Noah Harari",
+    "d": "Harari examines present-day challenges — AI, nationalism, terrorism, fake news — following his Sapiens and Homo Deus.",
+    "id": "book-48",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Wealth Money Can't Buy",
+    "a": "Robin Sharma",
+    "d": "Robin Sharma reframes wealth beyond money, focusing on health, relationships, craft, and inner peace.",
+    "id": "book-49",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Entrepreneur's Handbook",
+    "a": "Harvard Business Review",
+    "d": "An HBR compilation of practical guidance for first-time founders on funding, hiring, and scaling.",
+    "id": "book-50",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Change Book",
+    "a": "Mikael Krogerus & Roman Tschäppeler",
+    "d": "Fifty models for understanding and navigating personal and organizational change, in the series' signature diagram style.",
+    "id": "book-51",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "When",
+    "a": "Daniel H. Pink",
+    "d": "Pink synthesizes research on timing — the best times of day to work, decide, and take breaks.",
+    "id": "book-52",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Hard Thing About Hard Things",
+    "a": "Ben Horowitz",
+    "d": "A candid account of the brutal, unglamorous decisions involved in running a startup through crisis.",
+    "id": "book-53",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How To Avoid The Next Pandemic",
+    "a": "Bill Gates",
+    "d": "Gates outlines investments and reforms needed to prevent future pandemics after COVID-19.",
+    "id": "book-54",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Riding The Tiger",
+    "a": "Wilfried Aulbur with Amit Kapoor",
+    "d": "Explores how Indian companies can compete and grow amid rapid disruption and global competition.",
+    "id": "book-55",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Trillion Dollar Coach",
+    "a": "Eric Schmidt, Jonathan Rosenberg, Alan Eagle",
+    "d": "Former Google executives distill the leadership and coaching lessons of the legendary Bill Campbell.",
+    "id": "book-56",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Invent & Wander",
+    "a": "Jeff Bezos",
+    "d": "A curated collection of Jeff Bezos's shareholder letters and speeches on long-term thinking and innovation.",
+    "id": "book-57",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "That Will Never Work",
+    "a": "Marc Randolph",
+    "d": "Netflix co-founder's memoir of the company's chaotic, improbable early days.",
+    "id": "book-58",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Let Them Theory",
+    "a": "Mel Robbins",
+    "d": "Mel Robbins' framework for reducing anxiety about others' choices by simply 'letting them,' then focusing on your own response.",
+    "id": "book-59",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Buddha And The Badass",
+    "a": "Vishen Lakhiani",
+    "d": "Argues that blending spiritual awareness ('Buddha') with bold disruption ('Badass') unlocks meaning and success at work.",
+    "id": "book-60",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "HBR At 100",
+    "a": "Harvard Business Review",
+    "d": "A retrospective collection of the Harvard Business Review's most influential articles from its first century.",
+    "id": "book-61",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The One Thing",
+    "a": "Gary Keller with Jay Papasan",
+    "d": "Argues that extraordinary results come from focusing on the single most important task, not multitasking.",
+    "id": "book-62",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Grit",
+    "a": "Angela Duckworth",
+    "d": "Psychologist Duckworth argues that passion combined with sustained perseverance predicts achievement better than talent.",
+    "id": "book-63",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "1R",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "The Rudest Book Ever",
+    "a": "Shwetabh Gangwar",
+    "d": "A blunt, unfiltered self-help book challenging common assumptions about happiness, relationships, and self-worth.",
+    "id": "book-64",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Einstein: His Life And Universe",
+    "a": "Walter Isaacson",
+    "d": "A comprehensive biography connecting Einstein's personal rebelliousness to his revolutionary science.",
+    "id": "book-65",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Black Holes & Baby Universes And Other Essays",
+    "a": "Stephen Hawking",
+    "d": "A collection of Hawking's essays and lectures on cosmology, black holes, and his own life.",
+    "id": "book-66",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Power Of A Positive Attitude",
+    "a": "Roger Fritz",
+    "d": "A practical guide to building a positive outlook to improve career and personal relationships.",
+    "id": "book-67",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Alchemist",
+    "a": "Paulo Coelho",
+    "d": "A shepherd's allegorical journey to find treasure, exploring themes of destiny and following one's 'Personal Legend.'",
+    "id": "book-68",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Focus",
+    "a": "Daniel Goleman",
+    "d": "Goleman explores attention as a mental skill, linking focus to emotional intelligence and success.",
+    "id": "book-69",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "My Brief History",
+    "a": "Stephen Hawking",
+    "d": "Hawking's short, personal memoir of his childhood, illness, and career, distinct from his popular-science books.",
+    "id": "book-70",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Cosmos",
+    "a": "Carl Sagan",
+    "d": "Sagan's landmark tour of the universe, blending astronomy, history, and philosophy for a general audience.",
+    "id": "book-71",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Innovators",
+    "a": "Walter Isaacson",
+    "d": "A history of the digital revolution, tracing the people behind computers and the internet.",
+    "id": "book-72",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Youth And Truth: Unplug With Sadhguru",
+    "a": "Sadhguru",
+    "d": "Sadhguru's conversations with young people on identity, purpose, and modern life pressures.",
+    "id": "book-73",
+    "added": false,
+    "status": "review",
+    "shelf": "1R",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How To Think Like Da Vinci",
+    "a": "Daniel Smith",
+    "d": "Uses Leonardo da Vinci's habits and notebooks as a springboard for exercises in creative thinking.",
+    "id": "book-74",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Little Black Book For Stunning Success",
+    "a": "Robin Sharma",
+    "d": "A compact collection of Robin Sharma's aphorisms and principles on personal achievement.",
+    "id": "book-75",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How Not To Hire",
+    "a": "Emily Kumler",
+    "d": "A short guide to common hiring mistakes managers make and how to avoid them.",
+    "id": "book-76",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Power Of Your Subconscious Mind",
+    "a": "Dr. Joseph Murphy",
+    "d": "A classic self-help book on using the subconscious mind and positive thought to influence outcomes.",
+    "id": "book-77",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Think & Grow Rich",
+    "a": "Napoleon Hill",
+    "d": "One of the best-selling self-help books ever, distilling principles of wealth-building from interviews with successful people.",
+    "id": "book-78",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Time Machine",
+    "a": "H.G. Wells",
+    "d": "A pioneering science-fiction novella about a Victorian inventor who travels far into the future.",
+    "id": "book-79",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Sun Two-Speed Crossword Collection 1",
+    "a": "Collins",
+    "d": "A puzzle compilation from The Sun newspaper, offering both quick and cryptic crosswords.",
+    "id": "book-80",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Meditations",
+    "a": "Marcus Aurelius",
+    "d": "The Roman emperor's private philosophical journal, a foundational text of Stoic thought.",
+    "id": "book-81",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Brief History Of Time",
+    "a": "Stephen Hawking",
+    "d": "Hawking's bestselling introduction to cosmology, covering the Big Bang, black holes, and time.",
+    "id": "book-82",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Grand Design",
+    "a": "Stephen Hawking & Leonard Mlodinow",
+    "d": "Argues, using M-theory, that the universe could have arisen from physical law alone, without a creator.",
+    "id": "book-83",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Before You Start Up",
+    "a": "Pankaj Goyal",
+    "d": "Practical guidance for aspiring Indian entrepreneurs on validating ideas before committing to a startup.",
+    "id": "book-84",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Communication For International Business (Secrets)",
+    "a": "Rus Slater",
+    "d": "Part of the 'Business Secrets' pocket-guide series, focused on cross-cultural business communication.",
+    "id": "book-85",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Mindpower (Secrets)",
+    "a": "Martin Manser",
+    "d": "A pocket guide from the same series on using mental techniques to boost workplace performance.",
+    "id": "book-86",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Selling (Secrets)",
+    "a": "Nick Constable",
+    "d": "A concise pocket guide to sales fundamentals, part of the Collins Business Secrets series.",
+    "id": "book-87",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Leadership (Secrets)",
+    "a": "Michael Heath",
+    "d": "A compact guide to leadership essentials in the same illustrated pocket-book format.",
+    "id": "book-88",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Communication (Secrets)",
+    "a": "Carolyn Boyes",
+    "d": "Covers core communication skills for the workplace as part of the Business Secrets series.",
+    "id": "book-89",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Negotiating (Secrets)",
+    "a": "David Brown",
+    "d": "A short, practical primer on negotiation tactics for business settings.",
+    "id": "book-90",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Project Management (Secrets)",
+    "a": "Matthew Batchelor",
+    "d": "Covers project management fundamentals — planning, tracking, delivery — in pocket-guide form.",
+    "id": "book-91",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "People Management (Secrets)",
+    "a": "Rus Slater",
+    "d": "A concise guide to managing teams and individuals effectively.",
+    "id": "book-92",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Interview (Secrets)",
+    "a": "Heather Salter",
+    "d": "Tips on both sides of the hiring interview — as candidate and interviewer — in this pocket-guide series.",
+    "id": "book-93",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Marketing (Secrets)",
+    "a": "Peter Spalton",
+    "d": "A short primer on marketing fundamentals for small business owners and managers.",
+    "id": "book-94",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Women Who Wear Only Themselves",
+    "a": "Arundhathi Subramaniam",
+    "d": "A collection exploring women mystics and seekers across Indian spiritual traditions.",
+    "id": "book-95",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Stats & Curiosities",
+    "a": "Harvard Business Review",
+    "d": "A collection of striking business statistics and trivia compiled from HBR research.",
+    "id": "book-96",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Ego Is The Enemy",
+    "a": "Ryan Holiday",
+    "d": "Argues that unchecked ego undermines success at every career stage, drawing on Stoic philosophy and history.",
+    "id": "book-97",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "1L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "The Art Of Public Speaking",
+    "a": "Dale Carnegie with J. Berg Esenwein",
+    "d": "An early Carnegie text on building confidence and skill in public speaking.",
+    "id": "book-98",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Quick & Easy Way To Effective Speaking",
+    "a": "Dale Carnegie",
+    "d": "A practical, exercise-driven guide to overcoming nerves and speaking persuasively.",
+    "id": "book-99",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Daily Inspiration",
+    "a": "Robin Sharma",
+    "d": "A day-by-day collection of short motivational reflections from Robin Sharma.",
+    "id": "book-100",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Daily Stoic",
+    "a": "Ryan Holiday & Stephen Hanselman",
+    "d": "365 daily meditations drawn from Stoic philosophers like Marcus Aurelius, Seneca, and Epictetus.",
+    "id": "book-101",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "1L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "The Everything Store",
+    "a": "Brad Stone",
+    "d": "An in-depth history of Amazon and Jeff Bezos's relentless drive to build it.",
+    "id": "book-102",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "1L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "12 Rules For Life",
+    "a": "Jordan B. Peterson",
+    "d": "A set of prescriptive rules for living responsibly, blending psychology, mythology, and personal anecdote.",
+    "id": "book-103",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Four",
+    "a": "Scott Galloway",
+    "d": "A critical analysis of Amazon, Apple, Facebook, and Google's outsized influence on the economy and society.",
+    "id": "book-104",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "What If?",
+    "a": "Randall Munroe",
+    "d": "Serious scientific answers to absurd hypothetical questions, from the creator of the xkcd webcomic.",
+    "id": "book-105",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Rabindranath Tagore",
+    "a": "Sabyasachi Bhattacharya",
+    "d": "A biographical study of the Nobel laureate poet and polymath Rabindranath Tagore.",
+    "id": "book-106",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "My Journey",
+    "a": "APJ Abdul Kalam",
+    "d": "Kalam's autobiography reflecting on his path from a modest background to becoming India's president.",
+    "id": "book-107",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How To Win Friends & Influence People",
+    "a": "Dale Carnegie",
+    "d": "One of the most influential self-help books ever, on building rapport and interpersonal skill.",
+    "id": "book-108",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Factfulness",
+    "a": "Hans Rosling",
+    "d": "Uses data to argue the world is often better than popular pessimism suggests, and explains common thinking biases.",
+    "id": "book-109",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Hyperspace",
+    "a": "Michio Kaku",
+    "d": "A popular-science exploration of higher dimensions, string theory, and parallel universes.",
+    "id": "book-110",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Flow",
+    "a": "Mihaly Csikszentmihalyi",
+    "d": "Introduces 'flow,' the psychological state of full immersion, as key to happiness and creativity.",
+    "id": "book-111",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How To Stop Worrying & Start Living",
+    "a": "Dale Carnegie",
+    "d": "A practical guide to managing anxiety and worry through Carnegie's characteristic actionable techniques.",
+    "id": "book-112",
+    "added": false,
+    "status": "review",
+    "shelf": "1L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Steve Jobs",
+    "a": "Walter Isaacson",
+    "d": "The definitive authorized biography of Apple co-founder Steve Jobs, based on extensive interviews.",
+    "id": "book-113",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Rich Dad Poor Dad",
+    "a": "Robert Kiyosaki",
+    "d": "Contrasts two father figures' views on money to argue for financial literacy and building assets.",
+    "id": "book-114",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Freedom From The Known",
+    "a": "J. Krishnamurti",
+    "d": "An accessible entry point to Krishnamurti's philosophy on breaking free from conditioned thought.",
+    "id": "book-115",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "You Are The Universe",
+    "a": "Deepak Chopra & Menas Kafatos",
+    "d": "Blends physics and spirituality to argue consciousness is fundamental to reality.",
+    "id": "book-116",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Megaliving",
+    "a": "Robin Sharma",
+    "d": "An early Robin Sharma program of 30 days of practices for a more fulfilling life.",
+    "id": "book-117",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Mastery Manual",
+    "a": "Robin Sharma",
+    "d": "A guide of principles and exercises for reaching mastery in career and personal life.",
+    "id": "book-118",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Tools Of Titans",
+    "a": "Timothy Ferriss",
+    "d": "A compilation of routines, habits, and advice from top performers interviewed on Ferriss's podcast.",
+    "id": "book-119",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Beyond Positive Thinking",
+    "a": "Dr. Robert Anthony",
+    "d": "Argues that lasting change requires more than affirmations — it requires deep belief shifts.",
+    "id": "book-120",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Brief Answers To The Big Questions",
+    "a": "Stephen Hawking",
+    "d": "Hawking's posthumously published final book, answering questions like whether time travel is possible.",
+    "id": "book-121",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Digital Minimalism",
+    "a": "Cal Newport",
+    "d": "A philosophy for intentional technology use, cutting distraction to focus on what matters.",
+    "id": "book-122",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Yajnaseni",
+    "a": "Pratibha Ray",
+    "d": "A retelling of the Mahabharata from Draupadi's perspective, giving voice to her inner life.",
+    "id": "book-123",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Bounce",
+    "a": "Matthew Syed",
+    "d": "Argues that deliberate practice, not innate talent, is the real driver of expert performance.",
+    "id": "book-124",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Flowers On The Path",
+    "a": "Sadhguru",
+    "d": "Short reflections and stories from Sadhguru on the spiritual journey.",
+    "id": "book-125",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Quiet",
+    "a": "Susan Cain",
+    "d": "A landmark case for the strengths of introverts in a culture that prizes extroversion.",
+    "id": "book-126",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Leader In You",
+    "a": "Dale Carnegie",
+    "d": "Applies Carnegie's people-skills principles specifically to leadership and management.",
+    "id": "book-127",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Power Of Influence",
+    "a": "Yoritomo-Tashi",
+    "d": "An early 20th-century text on personal magnetism and influencing others.",
+    "id": "book-128",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How To Develop Self-Confidence & Influence People By Public Speaking",
+    "a": "Dale Carnegie",
+    "d": "One of Carnegie's foundational books linking confident public speaking to self-assurance.",
+    "id": "book-129",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The 7 Habits Of Highly Effective People",
+    "a": "Stephen R. Covey",
+    "d": "A widely influential framework of habits for personal and professional effectiveness, from proactivity to synergy.",
+    "id": "book-130",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Mini Habits",
+    "a": "Stephen Guise",
+    "d": "Argues that setting absurdly small habit goals is more sustainable than ambitious resolutions.",
+    "id": "book-131",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "A New Earth",
+    "a": "Eckhart Tolle",
+    "d": "Tolle's follow-up to The Power of Now, on ego dissolution and living in present awareness.",
+    "id": "book-132",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Autobiography Of Benjamin Franklin",
+    "a": "Benjamin Franklin",
+    "d": "Franklin's own account of his self-improvement, inventions, and civic life.",
+    "id": "book-133",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Greatness Guide 2",
+    "a": "Robin Sharma",
+    "d": "A second volume of Sharma's short lessons on ambition, discipline, and living well.",
+    "id": "book-134",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How Not To Get Promoted",
+    "a": "Emily Kumler",
+    "d": "A short guide to common career missteps that stall promotion, and how to avoid them.",
+    "id": "book-135",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Family Wisdom",
+    "a": "Robin Sharma",
+    "d": "Sharma's reflections on balancing career ambition with family life and relationships.",
+    "id": "book-136",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Leadership Wisdom",
+    "a": "Robin Sharma",
+    "d": "Leadership lessons drawn from Sharma's 'Monk Who Sold His Ferrari' framework.",
+    "id": "book-137",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Monk Who Sold His Ferrari",
+    "a": "Robin Sharma",
+    "d": "A parable about a lawyer who abandons his high-stress life to seek wisdom in the Himalayas.",
+    "id": "book-138",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Greatness Guide",
+    "a": "Robin Sharma",
+    "d": "Short, punchy life and career lessons distilled from Sharma's coaching work.",
+    "id": "book-139",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Heart Of Success",
+    "a": "Om Swami",
+    "d": "Explores success not just as achievement but as inner contentment and purpose.",
+    "id": "book-140",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Steve Jobs Way",
+    "a": "Jay Elliot with William L. Simon",
+    "d": "A former Apple executive's account of Jobs's leadership philosophy and management style.",
+    "id": "book-141",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Subtle Art Of Not Giving A F*ck",
+    "a": "Mark Manson",
+    "d": "A counterintuitive self-help book arguing that a good life comes from choosing your struggles carefully, not chasing positivity.",
+    "id": "book-142",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "How Not To Manage People",
+    "a": "Mike Wicks",
+    "d": "A guide to common management mistakes and how to build a healthier, more effective team culture.",
+    "id": "book-143",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Theory Of Everything",
+    "a": "Stephen Hawking",
+    "d": "A compilation of Hawking's lectures on the origin and fate of the universe.",
+    "id": "book-144",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Winning Attitude",
+    "a": "Jeff Keller",
+    "d": "A companion volume to Attitude Is Everything, with further stories on the power of mindset.",
+    "id": "book-145",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Miracle Morning",
+    "a": "Hal Elrod",
+    "d": "A six-practice morning routine (the 'SAVERS') designed to boost personal growth and productivity.",
+    "id": "book-146",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Inner Engineering",
+    "a": "Sadhguru",
+    "d": "Sadhguru's introduction to yogic practices and inner transformation for a modern audience.",
+    "id": "book-147",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Your Destination Has Arrived",
+    "a": "Barry Cheema",
+    "d": "A memoir-style book on believing you already have what you need to live the life you want.",
+    "id": "book-148",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The $100 Startup",
+    "a": "Chris Guillebeau",
+    "d": "Case studies of people who turned small passions into profitable microbusinesses with minimal capital.",
+    "id": "book-149",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Everything Is F*cked",
+    "a": "Mark Manson",
+    "d": "Manson's follow-up exploring hope, meaning, and belief systems in an age of cynicism.",
+    "id": "book-150",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "48-Hour Start-Up",
+    "a": "Fraser Doherty MBE",
+    "d": "A rapid-fire guide to launching a business idea within a weekend.",
+    "id": "book-151",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Deep Work",
+    "a": "Cal Newport",
+    "d": "Argues that the ability to focus without distraction is an increasingly valuable and rare skill.",
+    "id": "book-152",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "2L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "As A Man Thinketh",
+    "a": "James Allen",
+    "d": "A short, foundational self-help essay on how thoughts shape character and circumstance.",
+    "id": "book-153",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Getting Things Done",
+    "a": "David Allen",
+    "d": "A widely used productivity methodology for capturing, organizing, and executing tasks stress-free.",
+    "id": "book-154",
+    "added": false,
+    "status": "review",
+    "shelf": "2L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Richest Man In Babylon",
+    "a": "George S. Clason",
+    "d": "Parables set in ancient Babylon teaching foundational personal finance principles.",
+    "id": "book-155",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "World's Greatest Books For Personal Growth & Wealth (box set)",
+    "a": "Various",
+    "d": "A boxed collection pairing several classic self-help and wealth-building titles.",
+    "id": "book-156",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Ten Types Of Human",
+    "a": "Dexter Dias",
+    "d": "A human-rights barrister explores the psychological traits that drive both cruelty and moral courage.",
+    "id": "book-157",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Dale Carnegie Anthology (Set Of 5 Books)",
+    "a": "Dale Carnegie",
+    "d": "A boxed set collecting five of Carnegie's core titles on communication, confidence, and influence.",
+    "id": "book-158",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Leonardo Da Vinci",
+    "a": "Walter Isaacson",
+    "d": "A biography connecting da Vinci's art, science, and insatiable curiosity as one unified creative genius.",
+    "id": "book-159",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "4L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Benjamin Franklin",
+    "a": "Walter Isaacson",
+    "d": "A biography of Franklin as the era's most practical, versatile Founding Father.",
+    "id": "book-160",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "4L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "The Code",
+    "a": "Margaret O'Mara",
+    "d": "A history of Silicon Valley, tracing how government, universities, and venture capital built the tech industry.",
+    "id": "book-161",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "4L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Sapiens",
+    "a": "Yuval Noah Harari",
+    "d": "A sweeping history of Homo sapiens, arguing shared myths and stories enabled large-scale cooperation.",
+    "id": "book-162",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "4L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Homo Deus",
+    "a": "Yuval Noah Harari",
+    "d": "Harari's follow-up to Sapiens, speculating on humanity's future with AI, biotech, and data.",
+    "id": "book-163",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Bhagavad Gita As It Is",
+    "a": "A.C. Bhaktivedanta Swami Prabhupada",
+    "d": "A widely distributed translation and commentary on the Bhagavad Gita from a Krishna-devotional (ISKCON) perspective.",
+    "id": "book-164",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Born To Build",
+    "a": "Jim Clifton & Sangeetha Badal",
+    "d": "A guide, drawing on Gallup research, for identifying and developing natural entrepreneurial talent.",
+    "id": "book-165",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Ground Rules",
+    "a": "Jeremy Miller",
+    "d": "Distills Warren Buffett's early investing letters into timeless principles for value investing.",
+    "id": "book-166",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Midnight Library",
+    "a": "Matt Haig",
+    "d": "A novel where a woman explores infinite alternate lives through a library between life and death.",
+    "id": "book-167",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Limitless",
+    "a": "Jim Kwik",
+    "d": "A guide to improving memory, focus, and learning speed by overcoming self-limiting beliefs about the brain.",
+    "id": "book-168",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The 4-Hour Work Week",
+    "a": "Timothy Ferriss",
+    "d": "Ferriss's playbook for automating income and escaping traditional 9-to-5 work through lifestyle design.",
+    "id": "book-169",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Originals",
+    "a": "Adam Grant",
+    "d": "Examines how nonconformists drive innovation and champion new ideas despite risk.",
+    "id": "book-170",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Introducing Quantum Theory",
+    "a": "J.P. McEvoy & Oscar Zarate",
+    "d": "An illustrated, accessible primer on the history and core ideas of quantum physics.",
+    "id": "book-171",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Who Will Cry When You Die?",
+    "a": "Robin Sharma",
+    "d": "Short, reflective life lessons framed around living so as to be remembered well.",
+    "id": "book-172",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "A Taste Of Well-Being",
+    "a": "Isha Yoga Centre",
+    "d": "A cookbook/wellness guide from the Isha Yoga Centre pairing recipes with yogic wellness principles.",
+    "id": "book-173",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Corporate Chanakya",
+    "a": "Radhakrishnan Pillai",
+    "d": "Applies the ancient Indian strategist Chanakya's principles to modern management and leadership.",
+    "id": "book-174",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Measure What Matters",
+    "a": "John Doerr",
+    "d": "Introduces the OKR (Objectives and Key Results) goal-setting system used by Google and other major companies.",
+    "id": "book-175",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Tuesdays With Morrie",
+    "a": "Mitch Albom",
+    "d": "A memoir of the author's weekly visits with his dying former professor, Morrie Schwartz, on life's big questions.",
+    "id": "book-176",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Power Of Positive Thinking",
+    "a": "Norman Vincent Peale",
+    "d": "A foundational self-help classic on using faith and positive thought to overcome adversity.",
+    "id": "book-177",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Art Of Clear Thinking",
+    "a": "Patrick King",
+    "d": "A short guide to identifying and correcting common cognitive biases and reasoning errors.",
+    "id": "book-178",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Innovative Teams: 20-Minute Manager",
+    "a": "Harvard Business Review",
+    "d": "A short HBR primer on building and leading teams that generate innovative ideas.",
+    "id": "book-179",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Delegating Work: 20-Minute Manager",
+    "a": "Harvard Business Review",
+    "d": "A concise HBR guide to delegating effectively without losing control of outcomes.",
+    "id": "book-180",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Black Holes: The BBC Reith Lectures",
+    "a": "Stephen Hawking",
+    "d": "Transcripts of Hawking's BBC Reith Lectures explaining black holes to a general audience.",
+    "id": "book-181",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "True Education",
+    "a": "Swami Vivekananda",
+    "d": "Vivekananda's writings on education as character-building and self-realization, not mere information transfer.",
+    "id": "book-182",
+    "added": false,
+    "status": "review",
+    "shelf": "4L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Tribe Of Mentors",
+    "a": "Timothy Ferriss",
+    "d": "Short, tactical advice from hundreds of high-achievers, answering the same set of Ferriss's questions.",
+    "id": "book-183",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "3L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Bitcoin Billionaires",
+    "a": "Ben Mezrich",
+    "d": "Follows the Winklevoss twins from the Facebook lawsuit into early, high-stakes Bitcoin investing.",
+    "id": "book-184",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Code Of The Extraordinary Mind",
+    "a": "Vishen Lakhiani",
+    "d": "Challenges conventional 'rules' of success, encouraging readers to question inherited assumptions about life.",
+    "id": "book-185",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Alibaba",
+    "a": "Duncan Clark",
+    "d": "A history of Alibaba and Jack Ma's rise, from a Hangzhou apartment to global e-commerce giant.",
+    "id": "book-186",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "3L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "Crushing It!",
+    "a": "Gary Vaynerchuk",
+    "d": "A follow-up to Crush It, updated with newer social platforms and personal-branding case studies.",
+    "id": "book-187",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The 5 AM Club",
+    "a": "Robin Sharma",
+    "d": "A novel-format guide promoting a 5 a.m. wake routine to reclaim time for focus and growth.",
+    "id": "book-188",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Elon Musk",
+    "a": "Ashlee Vance",
+    "d": "A biography of Elon Musk covering PayPal, Tesla, and SpaceX, based on extensive access and interviews.",
+    "id": "book-189",
+    "added": false,
+    "status": "confirmed",
+    "shelf": "3L",
+    "note": "Title and shelf are readable in the supplied photo."
+  },
+  {
+    "t": "The Everyday Hero Manifesto",
+    "a": "Robin Sharma",
+    "d": "Sharma's manifesto arguing that ordinary daily choices, done with excellence, constitute real heroism.",
+    "id": "book-190",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Karma: A Yogi's Guide To Crafting Your Destiny",
+    "a": "Sadhguru",
+    "d": "Sadhguru reframes karma as an active, changeable force shaped by present choices, not fixed fate.",
+    "id": "book-191",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Essentialism",
+    "a": "Greg McKeown",
+    "d": "Argues for ruthlessly focusing on 'the vital few' priorities instead of spreading effort thin across everything.",
+    "id": "book-192",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Parallel Worlds",
+    "a": "Michio Kaku",
+    "d": "A popular-science exploration of multiverse theories and the ultimate fate of the cosmos.",
+    "id": "book-193",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Thinking, Fast And Slow",
+    "a": "Daniel Kahneman",
+    "d": "Nobel laureate Kahneman explains two systems of thought — fast/intuitive and slow/deliberate — and their biases.",
+    "id": "book-194",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Art Of War",
+    "a": "Sun Tzu",
+    "d": "An ancient Chinese military treatise widely applied today to business strategy and competition.",
+    "id": "book-195",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Drive",
+    "a": "Daniel H. Pink",
+    "d": "Argues that autonomy, mastery, and purpose motivate people more than external rewards.",
+    "id": "book-196",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Law Of Success In Sixteen Lessons",
+    "a": "Napoleon Hill",
+    "d": "Hill's original, longer precursor to Think and Grow Rich, structured as sixteen success lessons.",
+    "id": "book-197",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Leader Who Had No Title",
+    "a": "Robin Sharma",
+    "d": "A parable arguing that leadership is about mindset and impact, not job title or position.",
+    "id": "book-198",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Adiyogi: The Source Of Yoga",
+    "a": "Sadhguru",
+    "d": "Sadhguru retells the mythology of Shiva as 'Adiyogi,' the first yogi and origin of yogic science.",
+    "id": "book-199",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The 100 Absolutely Unbreakable Laws Of Business Success",
+    "a": "Brian Tracy",
+    "d": "A list-format guide of core business principles Tracy considers universally applicable.",
+    "id": "book-200",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Influence: The Psychology Of Persuasion",
+    "a": "Robert B. Cialdini",
+    "d": "A landmark study of the psychological principles — reciprocity, scarcity, authority — behind persuasion.",
+    "id": "book-201",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "The Rules Of Work",
+    "a": "Richard Templar",
+    "d": "An unwritten-rules guide to workplace success and career politics.",
+    "id": "book-202",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Mystic's Musings",
+    "a": "Sadhguru",
+    "d": "A collection of Sadhguru's reflections and answers on spirituality, self, and daily life.",
+    "id": "book-203",
+    "added": false,
+    "status": "review",
+    "shelf": "3L",
+    "note": "Imported from the original catalog. Shelf is a best-effort mapping to the new photo; please confirm."
+  },
+  {
+    "t": "Mindf*ck",
+    "a": "Christopher Wylie",
+    "d": "",
+    "id": "book-204",
+    "shelf": "5L",
+    "added": true,
+    "status": "confirmed",
+    "note": "New title identified from the bottom-left shelf."
+  },
+  {
+    "t": "Metahuman",
+    "a": "Deepak Chopra",
+    "d": "",
+    "id": "book-205",
+    "shelf": "5L",
+    "added": true,
+    "status": "confirmed",
+    "note": "New title identified from the bottom-left shelf."
+  },
+  {
+    "t": "Emotional Intelligence",
+    "a": "Daniel Goleman",
+    "d": "",
+    "id": "book-206",
+    "shelf": "5L",
+    "added": true,
+    "status": "confirmed",
+    "note": "New title identified from the bottom-left shelf."
+  },
+  {
+    "t": "SuperFreakonomics",
+    "a": "Steven D. Levitt & Stephen J. Dubner",
+    "d": "",
+    "id": "book-207",
+    "shelf": "5L",
+    "added": true,
+    "status": "review",
+    "note": "The bottom-right stack in the left compartment appears to contain this title. Confirm the cover and authors."
+  }
+]

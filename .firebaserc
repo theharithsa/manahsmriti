@@ -1,0 +1,6 @@
+{
+  "projects": {"default": "manahsmriti"},
+  "targets": {
+    "manahsmriti": {"hosting": {"books": ["manahsmriti-books"]}}
+  }
+}

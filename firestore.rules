@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function sharedEditor() {
+      return signedIn()
+        && request.auth.token.email_verified == true
+        && request.auth.token.email is string
+        && request.auth.token.email.lower() in get(/databases/$(database)/documents/booksSettings/access).data.editorEmails;
+    }
+    function validBook(id) {
+      let b = request.resource.data;
+      return id.matches('^[a-zA-Z0-9_-]{1,128}$')
+        && b.keys().hasAll(['t', 'a', 'd', 'note', 'shelf', 'status', 'added', 'createdAt', 'updatedAt'])
+        && b.keys().hasOnly(['t', 'a', 'd', 'note', 'shelf', 'status', 'added', 'createdAt', 'updatedAt'])
+        && b.t is string && b.t.size() > 0 && b.t.size() <= 240
+        && b.a is string && b.a.size() > 0 && b.a.size() <= 240
+        && b.d is string && b.d.size() <= 5000
+        && b.note is string && b.note.size() <= 1000
+        && b.shelf in ['1L', '1R', '2L', '2R', '3L', '3R', '4L', '4R', '5L', '5R', 'unsorted']
+        && b.status in ['review', 'confirmed']
+        && b.added is bool
+        && b.createdAt is timestamp && b.updatedAt is timestamp
+        && b.updatedAt == request.time;
+    }
+    function validCreate(id) { return validBook(id) && request.resource.data.createdAt == request.time; }
+    function validUpdate(id) { return validBook(id) && request.resource.data.createdAt == resource.data.createdAt; }
+    // Namespaced to books so future Manahsmriti apps can use their own collections.
+    match /booksShared/{id} {
+      allow read: if signedIn();
+      allow create: if sharedEditor() && validCreate(id);
+      allow update: if sharedEditor() && validUpdate(id);
+      allow delete: if sharedEditor();
+    }
+    match /booksUsers/{uid}/books/{id} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow create: if signedIn() && request.auth.uid == uid && validCreate(id);
+      allow update: if signedIn() && request.auth.uid == uid && validUpdate(id);
+      allow delete: if signedIn() && request.auth.uid == uid;
+    }
+    match /booksSettings/access {
+      allow get: if signedIn();
+      // Editor permissions are provisioned through the authenticated admin script.
+      allow write, list: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
