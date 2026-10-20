@@ -44,6 +44,7 @@ async function main() {
     async function newPage(context) { const page = await context.newPage(); page.on('pageerror', e => errors.push(e.message));page.on('console',m=>{if(m.type()==='error'){if(m.text().includes('violates the following Content Security Policy'))errors.push(m.text());else if(!m.text().includes('ERR_INTERNET_DISCONNECTED'))console.log('BROWSER ERROR',m.text());}});page.on('requestfailed',r=>{if(!['net::ERR_ABORTED','net::ERR_INTERNET_DISCONNECTED'].includes(r.failure()?.errorText))console.log('REQUEST FAILED',r.url(),r.failure()?.errorText);}); return page; }
     async function signIn(page, email) {
       await page.context().route(/^https:\/\/(unpkg\.com|fonts\.googleapis\.com|fonts\.gstatic\.com)\//, route => route.fulfill({status:200,contentType:route.request().url().endsWith('.js')?'application/javascript':'text/css',body:''}));
+      await page.context().route('https://lh3.googleusercontent.com/test-avatar', route => route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aMegAAAAASUVORK5CYII=', 'base64') }));
       await page.goto('http://127.0.0.1:5174/');
       const popupPromise = page.waitForEvent('popup');
       await page.locator('#sign-in-button').click();
@@ -52,7 +53,7 @@ async function main() {
       await popup.waitForSelector('#add-account-button');
       const existing = popup.getByText(email, { exact: true });
       if (await existing.count()) await existing.first().click();
-      else { await popup.locator('#add-account-button').click(); await popup.locator('#email-input').fill(email); await popup.locator('#display-name-input').fill(email.split('@')[0]); await popup.locator('#sign-in').click(); }
+      else { await popup.locator('#add-account-button').click(); await popup.locator('#email-input').fill(email); await popup.locator('#display-name-input').fill(email.split('@')[0]); await popup.locator('#profile-photo-input').fill('https://lh3.googleusercontent.com/test-avatar'); await popup.locator('#sign-in').click(); }
       await page.locator('#library-screen').waitFor({ state: 'visible' });
       await page.waitForFunction(() => document.getElementById('sync-status').textContent.includes('Up to date'));
     }
@@ -65,7 +66,12 @@ async function main() {
     await owner.screenshot({ path: 'artifacts/sign-in-desktop.png' });
     await signIn(owner, 'theharithsa@gmail.com');
     await owner.locator('#add-button').waitFor({ state: 'visible' });
-    assert.equal(await owner.locator('.book-card').count(), total);
+    assert.equal(await owner.locator('#table-view').getAttribute('aria-pressed'), 'true');
+    assert.equal(await owner.locator('#book-rows tr').count(), 25);
+    await owner.locator('#cards-view').click();
+    await owner.locator('#account-photo').waitFor({ state: 'visible' });
+    assert.equal(await owner.locator('#account-initial').isVisible(), false);
+    assert.equal(await owner.locator('.book-card').count(), 25);
     assert.equal(await owner.locator('.book-card svg').count(), 0);
     await owner.evaluate(() => document.fonts.ready);
     for (const family of ['Caveat Variable', 'Ancizar Serif Variable', 'Source Code Pro Variable']) {
@@ -86,7 +92,7 @@ async function main() {
     assert.equal(await sortControl.getAttribute('aria-expanded'), 'false');
     await owner.screenshot({ path: 'artifacts/shared-library-desktop.png' });
     await owner.locator('#search').fill('Cal Newport'); assert.equal(await owner.locator('.book-card').count(), 2);
-    await owner.locator('#clear-search').click(); assert.equal(await owner.locator('.book-card').count(), total);
+    await owner.locator('#clear-search').click(); assert.equal(await owner.locator('.book-card').count(), 25);
     await owner.locator('#search').fill('Deep Work');
     await owner.locator('.book-author').click();
     assert.equal(await owner.locator('.book-card').count(), 2);
@@ -102,10 +108,11 @@ async function main() {
     await owner.locator('textarea[name="description"]').fill('Updated by the shared catalog editor.');
     await owner.locator('#save-button').click(); await owner.locator('#edit-dialog').waitFor({ state: 'hidden' });
     await owner.reload(); await owner.waitForFunction(() => document.getElementById('sync-status').textContent.includes('Up to date'));
-    await owner.locator('#search').fill('Deep Work'); assert.match(await owner.locator('.book-description').textContent(), /Updated by/);
+    await owner.locator('#search').fill('Deep Work'); await owner.locator('.book-title-button').click(); assert.match(await owner.locator('.detail-description').textContent(), /Updated by/); await owner.keyboard.press('Escape');
     const readerContext = await browser.newContext({ viewport: { width: 390, height: 1000 } });
     const reader = await newPage(readerContext); await signIn(reader, 'reader@example.com');
     assert.equal(await reader.locator('#add-button').isVisible(), false);
+    assert.equal(await reader.locator('#cards-view').getAttribute('aria-pressed'), 'true');
     await reader.locator('#search').fill('Deep Work'); await reader.locator('.book-title-button').click();
     assert.equal(await reader.locator('#edit-button').count(), 0);
     await reader.getByRole('combobox', { name: /^My reading status:/ }).click();
@@ -114,10 +121,13 @@ async function main() {
     assert.equal(await reader.locator('.reading-label').textContent(), 'Reading');
     assert.equal(await owner.locator('.reading-label').count(), 0);
     await reader.keyboard.press('Escape');
+    await reader.locator('#filters-button').click();
     await reader.getByRole('combobox', { name: /^Filter by reading status:/ }).click();
     await reader.getByRole('option', { name: 'Reading', exact: true }).click();
     assert.equal(await reader.locator('.book-card').count(), 1);
+    await reader.getByRole('button', { name: 'Show books', exact: true }).click();
     await reader.reload();
+    await reader.locator('#search').fill('Deep Work');
     await reader.locator('.reading-label').waitFor();
     await reader.locator('#search').fill('Deep Work'); await reader.locator('.book-title-button').click();
     assert.equal(await reader.locator('#book-reading').inputValue(), 'reading');
@@ -190,6 +200,7 @@ async function main() {
     }
     await reader.setViewportSize({ width: 390, height: 1000 }); await reader.locator('#theme-button').click();
     await reader.screenshot({ path: 'artifacts/shared-library-dark.png' });
+    await reader.locator('#filters-button').click();
     const shelfControl = reader.locator('#shelf-filter').locator('..').getByRole('combobox');
     await shelfControl.click();
     assert.equal(await reader.getByRole('listbox', { name: 'Filter by shelf' }).evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(29, 35, 45)');
@@ -197,12 +208,58 @@ async function main() {
     assert.ok(darkMenuRect.y >= 0 && darkMenuRect.y + darkMenuRect.height <= 1000, 'Dark-mode menu stays within viewport');
     await reader.screenshot({ path: 'artifacts/dropdown-dark-mobile.png' });
     await reader.keyboard.press('Escape');
+    await reader.keyboard.press('Escape');
     await reader.locator('#map-button').click(); assert.equal(await reader.locator('.shelf-cell').count(), 10);
     await reader.locator('[data-shelf="5L"]').click(); assert.equal(await reader.locator('.book-card').count(), lowerLeft);
+    await reader.locator('#clear-all-filters').click();
+    await reader.locator('#table-view').click();
+    assert.equal(await reader.locator('#book-rows tr').count(), 25);
+    assert.equal(await reader.locator('#page-range').textContent(), '1–25 of ' + total);
+    const firstTitle = await reader.locator('.table-title').first().textContent();
+    await reader.locator('#next-page').click();
+    assert.equal(await reader.locator('#page-range').textContent(), '26–50 of ' + total);
+    assert.notEqual(await reader.locator('.table-title').first().textContent(), firstTitle);
+    await reader.locator('#search').fill('Deep Work');
+    assert.equal(await reader.locator('#page-range').textContent(), '1–1 of 1');
+    await reader.locator('.status-button').click();
+    await reader.getByRole('combobox', { name: /^Status:/ }).click();
+    await reader.getByRole('option', { name: 'Read', exact: true }).click();
+    await reader.locator('#save-reading').click();
+    await reader.locator('#reading-dialog').waitFor({ state: 'hidden' });
+    await reader.locator('.status-button').filter({ hasText: 'Read' }).waitFor();
+    await reader.locator('#filters-button').click();
+    await reader.getByRole('combobox', { name: /^Author:/ }).click();
+    await reader.getByRole('option', { name: 'Cal Newport', exact: true }).click();
+    await reader.getByRole('button', { name: 'Show books', exact: true }).click();
+    assert.equal(await reader.locator('#author-filter').isVisible(), true);
+    await reader.locator('#clear-all-filters').click();
+    await reader.setViewportSize({ width: 1440, height: 1000 });
+    await reader.locator('[data-sort="author"]').click();
+    assert.equal(await reader.locator('[data-column="author"]').getAttribute('aria-sort'), 'ascending');
+    await reader.locator('[data-sort="author"]').click();
+    assert.equal(await reader.locator('[data-column="author"]').getAttribute('aria-sort'), 'descending');
+    await reader.locator('#page-size').locator('..').getByRole('combobox').click();
+    await reader.getByRole('option', { name: '50', exact: true }).click();
+    assert.equal(await reader.locator('#book-rows tr').count(), 50);
+    await reader.reload(); await reader.locator('#book-rows tr').first().waitFor();
+    assert.equal(await reader.locator('#table-view').getAttribute('aria-pressed'), 'true');
+    assert.equal(await reader.locator('#book-rows tr').count(), 50);
+    for (const width of [360, 390, 768, 1024, 1440]) {
+      await reader.setViewportSize({ width, height: 1000 });
+      assert.equal(await reader.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'Table does not overflow at ' + width);
+    }
+    await reader.setViewportSize({ width: 1440, height: 1000 });
+    await reader.screenshot({ path: 'artifacts/catalog-table-desktop.png' });
+    await reader.setViewportSize({ width: 390, height: 1000 });
+    await reader.screenshot({ path: 'artifacts/catalog-table-mobile.png' });
     await reader.locator('#account-button').click(); await reader.locator('#sign-out-button').click();
     await reader.locator('#sign-in-screen').waitFor({ state: 'visible' }); assert.equal(await reader.locator('.book-card').count(), 0);
+    await owner.context().route('https://lh3.googleusercontent.com/bad-avatar', route => route.fulfill({ status: 404, body: '' }));
+    await owner.evaluate(() => document.getElementById('account-photo').src = 'https://lh3.googleusercontent.com/bad-avatar');
+    await owner.locator('#account-initial').waitFor({ state: 'visible' });
+    assert.equal(await owner.locator('#account-photo').isVisible(), false);
     assert.deepEqual(errors, []);
-    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, 5 responsive widths, dark theme and sign-out clearing.');
+    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, compact chips, table/card switching, sortable table headers, pagination and saved page size, quick reading status, profile avatar/fallback, 5 responsive widths, dark theme and sign-out clearing.');
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); await env.cleanup(); }
 }
 main().catch(error => { console.error(error); process.exit(1); });

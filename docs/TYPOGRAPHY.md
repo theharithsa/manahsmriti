@@ -31,3 +31,5 @@ Select controls use a keyboard-accessible select-only combobox with themed listb
 Author names are underlined text buttons on cards and book details. Selecting one applies an exact, normalized author filter; the author chip clears it. Author A–Z is also available in the sort menu.
 
 Reading status is optional: To read, Reading, Read, or Collection. It is changed from book details, shown on cards, and can be filtered. Choosing No status clears it. Choices are stored independently of catalog data at `booksUsers/{uid}/reading/{scope}-{bookId}` and sync only for their owner. Shared catalog readers can mark books without copying or editing shared records. Shared and private entries have independent statuses; catalog imports/exports do not transfer personal reading choices.
+
+The compact catalog revision uses 25px Caveat card titles and 23px table titles. Descriptions are shown in book details. The signed-in H1 is reduced to 22–30px. Applied filters use 13–14px Ancizar Serif chips. See CATALOG-UX.md for view, filter, pagination, and avatar behavior.

@@ -13,6 +13,15 @@ let authorFilter = '', reading = {}, unsubscribeReading = null;
 const readingLabels = { 'to-read': 'To read', reading: 'Reading', read: 'Read', collection: 'Collection' };
 const readingState = b => reading[scope + '-' + b.id] || '';
 let toastTimer, importing = false, saving = false;
+let page = 1, pageSize = 25, view = matchMedia('(max-width: 760px)').matches ? 'cards' : 'table', sortDescending = false, filterSignature = '', quickReading = null;
+try {
+  const storedView = localStorage.getItem('books-view');
+  const storedSize = Number(localStorage.getItem('books-page-size'));
+  if (['cards', 'table'].includes(storedView)) view = storedView;
+  if ([25, 50, 100].includes(storedSize)) pageSize = storedSize;
+} catch { /* Preferences are optional. */ }
+function rememberView() { try { localStorage.setItem('books-view', view); localStorage.setItem('books-page-size', String(pageSize)); } catch { /* Keep in memory. */ } }
+
 const canEdit = () => !!user && (scope === 'private' || editor);
 function showError(element, message) { element.textContent = message; element.hidden = !message; }
 function message(error) {
@@ -38,6 +47,7 @@ window.addEventListener('online', networkStatus); window.addEventListener('offli
 function render() {
   syncSelects();
   $('clear-search').hidden = !$('search').value;
+  $('author-select').value = authorFilter; $('verification-filter').value = filter;
   const query = normalize($('search').value).split(' ').filter(Boolean);
   const selectedShelf = $('shelf-filter').value;
   const readingFilter = $('reading-filter').value;
@@ -47,10 +57,32 @@ function render() {
     (!readingFilter || (readingFilter === 'unmarked' ? !readingState(b) : readingState(b) === readingFilter)) && (filter !== 'review' || b.status === 'review') &&
     (!selectedShelf || b.shelf === selectedShelf) && query.every(q => normalize(b.t + ' ' + b.a).includes(q)));
   const sort = $('sort').value;
+  const signature = JSON.stringify([scope, authorFilter, readingFilter, filter, selectedShelf, query, sort, sortDescending]);
+  if (signature !== filterSignature) { page = 1; filterSignature = signature; }
   list.sort((a, b) => sort === 'author' ? a.a.localeCompare(b.a) || a.t.localeCompare(b.t) :
     sort === 'shelf' ? a.shelf.localeCompare(b.shelf) || a.t.localeCompare(b.t) :
     sort === 'recent' ? (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0) || b.id.localeCompare(a.id) : a.t.localeCompare(b.t));
-  $('book-grid').innerHTML = list.map(b => `<article class="book-card" data-id="${esc(b.id)}" aria-label="${esc(b.t)}, ${esc(shelfName(b.shelf))}"><h3><button class="book-title-button">${esc(b.t)}</button></h3><button class="book-author author-link" data-author="${esc(b.a)}">${esc(b.a)}</button>${b.d ? `<p class="book-description">${esc(b.d)}</p>` : ''}<span class="card-meta"><span class="shelf-label">${esc(shelfName(b.shelf))}</span>${b.status === 'review' ? '<span class="review-label">Needs review</span>' : ''}${readingState(b) ? `<span class="reading-label">${readingLabels[readingState(b)]}</span>` : ''}</span></article>`).join('');
+  if (sortDescending) list.reverse();
+  const pages = Math.max(1, Math.ceil(list.length / pageSize));
+  page = Math.min(page, pages);
+  const start = (page - 1) * pageSize, visible = list.slice(start, start + pageSize);
+  $('book-grid').hidden = view !== 'cards'; $('table-container').hidden = view !== 'table' || !list.length;
+  $('cards-view').setAttribute('aria-pressed', String(view === 'cards')); $('table-view').setAttribute('aria-pressed', String(view === 'table'));
+  $('book-grid').innerHTML = view !== 'cards' ? '' : visible.map(b => `<article class="book-card" data-id="${esc(b.id)}"><h3><button class="book-title-button">${esc(b.t)}</button></h3><button class="book-author author-link" data-author="${esc(b.a)}">${esc(b.a)}</button><span class="card-meta"><span class="shelf-label">${esc(shelfName(b.shelf))}</span>${b.status === 'review' ? '<span class="review-label">Needs review</span>' : ''}${readingState(b) ? `<span class="reading-label">${readingLabels[readingState(b)]}</span>` : ''}</span></article>`).join('');
+  $('book-rows').innerHTML = view !== 'table' ? '' : visible.map(b => `<tr data-id="${esc(b.id)}"><td><button class="table-title book-title-button">${esc(b.t)}</button><div class="mobile-book-meta"><button class="author-link" data-author="${esc(b.a)}">${esc(b.a)}</button><span class="shelf-label">${esc(shelfName(b.shelf))}</span></div></td><td class="desktop-column"><button class="author-link" data-author="${esc(b.a)}">${esc(b.a)}</button></td><td class="desktop-column"><span class="shelf-label">${esc(shelfName(b.shelf))}</span></td><td><button class="status-button" data-reading="${esc(b.id)}" aria-label="Reading status for ${esc(b.t)}: ${readingLabels[readingState(b)] || 'No status'}">${readingLabels[readingState(b)] || 'No status'}<span aria-hidden="true">⌄</span></button></td><td class="desktop-column"><span class="${b.status === 'review' ? 'review-label' : 'muted'}">${b.status === 'review' ? 'Needs review' : 'Confirmed'}</span></td></tr>`).join('');
+  for (const th of document.querySelectorAll('[data-column]')) { const active = th.dataset.column === sort; th.setAttribute('aria-sort', active ? sortDescending ? 'descending' : 'ascending' : 'none'); th.querySelector('span').textContent = active ? sortDescending ? '↓' : '↑' : '↕'; }
+  $('pagination').hidden = !loaded || !list.length;
+  $('page-range').textContent = `${list.length ? start + 1 : 0}–${Math.min(start + pageSize, list.length)} of ${list.length}`;
+  $('page-number').textContent = `${page} / ${pages}`;
+  $('previous-page').disabled = page === 1; $('next-page').disabled = page === pages;
+  $('page-size').value = String(pageSize);
+  const chips = [query.length && ['search', 'Search: ' + $('search').value], selectedShelf && ['shelf', shelfName(selectedShelf)], readingFilter && ['reading', readingLabels[readingFilter] || 'No status'], filter === 'review' && ['verification', 'Needs review']].filter(Boolean);
+  $('other-filters').innerHTML = chips.map(([key, label]) => `<button class="filter-chip" data-clear="${key}" aria-label="Remove filter: ${esc(label)}"><span>${esc(label)}</span><span aria-hidden="true">×</span></button>`).join('');
+  $('clear-all-filters').hidden = !chips.length && !authorFilter;
+  $('author-filter').setAttribute('aria-label', `Remove author filter: ${authorFilter}`);
+  $('filters-button').textContent = `Filters${chips.filter(c => c[0] !== 'search').length + !!authorFilter ? ' (' + (chips.filter(c => c[0] !== 'search').length + !!authorFilter) + ')' : ''}`;
+  $('filter-result-count').textContent = `${list.length} matching ${list.length === 1 ? 'book' : 'books'}`;
+  syncSelects();
   $('total-count').textContent = loaded ? books.length : '—';
   $('result-count').textContent = loaded ? `${list.length} of ${books.length} ${books.length === 1 ? 'book' : 'books'}` : 'Loading books…';
   const hasFilters = !!authorFilter || !!readingFilter || !!query.length || !!selectedShelf || filter !== 'all';
@@ -62,7 +94,7 @@ function render() {
   $('import-label').hidden = !canEdit();
   $('import-note').hidden = !canEdit();
   $('library-eyebrow').textContent = scope === 'shared' ? 'THE SHARED COLLECTION' : 'JUST FOR YOU';
-  $('library-title').innerHTML = scope === 'shared' ? 'Good books.<br>All in one place.' : 'Your books.<br>Your own little world.';
+  $('library-title').textContent = scope === 'shared' ? 'Shared library' : 'My private library';
   $('library-description').textContent = scope === 'shared' ? 'A collection of ideas, stories, and things worth coming back to.' : 'A private collection that follows you, from one device to the next.';
   $('summary-label').textContent = scope === 'shared' ? 'books on the shared shelves' : 'books in your private collection';
   for (const s of ['shared', 'private']) { $(s + '-tab').classList.toggle('selected', scope === s); $(s + '-tab').setAttribute('aria-pressed', String(scope === s)); }
@@ -77,7 +109,7 @@ function subscribe() {
   unsubscribe = watchBooks(scope, user.uid, (records, cached) => {
     if (generation !== epoch) return;
     books = records.filter(b => typeof b.t === 'string' && typeof b.a === 'string' && typeof b.d === 'string');
-    loaded = true; fromCache = cached; $('catalog-error').hidden = true; render();
+    updateAuthors(); loaded = true; fromCache = cached; $('catalog-error').hidden = true; render();
   }, error => {
     if (generation !== epoch) return;
     books = []; loaded = false; $('catalog-error').hidden = false;
@@ -94,13 +126,38 @@ const shelfOptions = ['unsorted', ...SHELVES];
 for (const id of ['shelf-filter', 'edit-shelf']) {
   for (const shelf of shelfOptions) { const option = document.createElement('option'); option.value = shelf; option.textContent = shelfName(shelf); $(id).append(option); }
 }
+function updateAuthors() {
+  const authors = [...new Set(books.map(b => b.a))].sort((a,b) => a.localeCompare(b));
+  $('author-select').replaceChildren(new Option('Every author', ''), ...authors.map(a => new Option(a, a)));
+  $('author-select').value = authorFilter;
+}
+$('page-size').value = String(pageSize);
 initializeSelects();
+function positionFilters() {
+  const dialog = $('filters-dialog');
+  if (matchMedia('(max-width: 760px)').matches) { dialog.style.removeProperty('left'); dialog.style.removeProperty('top'); return; }
+  const rect = $('filters-button').getBoundingClientRect();
+  dialog.style.left = `${Math.max(16, Math.min(rect.right - 420, innerWidth - 436))}px`;
+  dialog.style.top = `${Math.max(16, Math.min(rect.bottom + 8, innerHeight - Math.min(dialog.scrollHeight, innerHeight - 32) - 16))}px`;
+}
+$('filters-button').onclick = () => { openDialog('filters-dialog'); positionFilters(); };
+window.addEventListener('resize', () => { if ($('filters-dialog').open) positionFilters(); });
+$('author-select').onchange = e => { authorFilter = e.target.value; render(); };
+$('verification-filter').onchange = e => { filter = e.target.value; render(); };
+$('cards-view').onclick = () => { view = 'cards'; rememberView(); render(); };
+$('table-view').onclick = () => { view = 'table'; rememberView(); render(); };
+$('page-size').onchange = e => { pageSize = Number(e.target.value); page = 1; rememberView(); render(); };
+function turnPage(delta) { page += delta; render(); document.querySelector('.library-tools').scrollIntoView({ block: 'start' }); }
+$('previous-page').onclick = () => turnPage(-1); $('next-page').onclick = () => turnPage(1);
+document.querySelectorAll('[data-sort]').forEach(button => button.onclick = () => { const sort = button.dataset.sort; sortDescending = $('sort').value === sort ? !sortDescending : false; $('sort').value = sort; render(); });
+$('sort').addEventListener('change', () => { sortDescending = false; render(); });
+$('other-filters').onclick = e => { const key = e.target.closest('[data-clear]')?.dataset.clear; if (!key) return; if (key === 'search') $('search').value = ''; if (key === 'shelf') $('shelf-filter').value = ''; if (key === 'reading') $('reading-filter').value = ''; if (key === 'verification') filter = 'all'; render(); };
 $('clear-search').onclick = () => { $('search').value = ''; render(); $('search').focus(); };
 for (const id of ['search', 'sort', 'shelf-filter', 'reading-filter']) $(id).addEventListener(id === 'search' ? 'input' : 'change', render);
 document.querySelectorAll('[data-filter]').forEach(el => el.onclick = () => { filter = el.dataset.filter; render(); });
 $('author-filter').onclick = () => { authorFilter = ''; render(); };
 function chooseAuthor(author) { authorFilter = author; $('search').value = ''; $('shelf-filter').value = ''; $('reading-filter').value = ''; filter = 'all'; closeDialogs(); render(); $('author-filter').focus(); }
-$('clear-filters').onclick = () => { authorFilter = ''; $('reading-filter').value = ''; $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; render(); };
+$('clear-filters').onclick = $('clear-all-filters').onclick = $('reset-panel-filters').onclick = () => { authorFilter = ''; $('reading-filter').value = ''; $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; render(); };
 document.querySelectorAll('[data-close]').forEach(el => el.onclick = () => {
   if (saving && el.closest('dialog').id === 'edit-dialog') return;
   if (importing && el.closest('dialog').id === 'export-dialog') return;
@@ -119,9 +176,14 @@ watchAuth(async next => {
   unsubscribe?.(); unsubscribe = null; ++epoch;
   user = next; editor = false; books = []; loaded = false; editing = null; deleting = null;
   closeDialogs(); $('book-details').replaceChildren(); $('book-form').reset();
-  $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; scope = 'shared';
+  $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; scope = 'shared'; page = 1; quickReading = null; updateAuthors();
   $('boot-state').hidden = true; $('sign-in-screen').hidden = !!next; $('library-screen').hidden = !next; $('account-button').hidden = !next;
   $('account-email').textContent = next?.email || ''; $('account-label').textContent = next?.displayName?.split(' ')[0] || 'Account';
+  const photo = $('account-photo'); photo.hidden = true; photo.removeAttribute('src'); $('account-initial').hidden = false;
+  photo.onload = () => { photo.hidden = false; $('account-initial').hidden = true; };
+  photo.onerror = () => { photo.hidden = true; $('account-initial').hidden = false; };
+  const photoURL = next?.photoURL || next?.providerData?.find(p => p.providerId === 'google.com')?.photoURL;
+  if (photoURL) { try { const url = new URL(photoURL); if (url.protocol === 'https:' && (url.hostname === 'googleusercontent.com' || url.hostname.endsWith('.googleusercontent.com'))) photo.src = url.href; } catch { /* Keep initials. */ } }
   $('account-initial').textContent = (next?.displayName || next?.email || 'M').slice(0, 1).toUpperCase();
   render();
   if (!next) return;
@@ -154,7 +216,13 @@ function openEdit(book) {
   openDialog('edit-dialog');
 }
 $('add-button').onclick = () => openEdit(null);
-$('book-grid').onclick = e => {
+$('book-rows').onclick = $('book-grid').onclick = e => {
+  const statusButton = e.target.closest('[data-reading]');
+  if (statusButton) {
+    const book = books.find(b => b.id === statusButton.dataset.reading); if (!book) return;
+    quickReading = { uid: user.uid, scope, id: book.id };
+    $('reading-book-title').textContent = book.t; $('quick-reading').value = readingState(book); showError($('quick-reading-error'), ''); syncSelects(); openDialog('reading-dialog'); return;
+  }
   const author = e.target.closest('[data-author]'); if (author) { chooseAuthor(author.dataset.author); return; }
   const card = e.target.closest('[data-id]'); if (!card) return;
   const book = books.find(b => b.id === card.dataset.id); if (!book) return;
@@ -183,6 +251,13 @@ $('book-grid').onclick = e => {
     catch (error) { if (user?.uid === uid) toast(message(error)); }
     finally { button.disabled = false; }
   };
+};
+$('save-reading').onclick = async () => {
+  if (!quickReading || !user) return;
+  const target = { ...quickReading }; const button = $('save-reading'); button.disabled = true;
+  try { if (!navigator.onLine) throw new Error('Reconnect before saving your reading status.'); await saveReading(target.uid, target.scope, target.id, $('quick-reading').value); if (user?.uid === target.uid) { $('reading-dialog').close(); toast('Reading status saved.'); } }
+  catch (error) { if (user?.uid === target.uid) showError($('quick-reading-error'), message(error)); }
+  finally { button.disabled = false; }
 };
 $('book-form').onsubmit = async e => {
   e.preventDefault(); if (!editing || saving || !user) return;
