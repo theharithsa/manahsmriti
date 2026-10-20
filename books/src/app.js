@@ -3,12 +3,15 @@ import '@fontsource-variable/ancizar-serif';
 import '@fontsource-variable/source-code-pro';
 import './styles.css';
 import { initializeSelects, syncSelects, closeSelects } from './select-controls.js';
-import { watchAuth, login, finishRedirect, logout, isSharedEditor, watchBooks, saveBook, removeBook, importBooks, copyToPrivate } from './firebase.js';
+import { watchAuth, login, finishRedirect, logout, isSharedEditor, watchBooks, saveBook, removeBook, importBooks, copyToPrivate, watchReading, saveReading } from './firebase.js';
 import { SHELVES, shelfName, escapeHTML as esc, normalize, cleanBook, parseCatalog, csvCell } from './catalog.js';
 
 const $ = id => document.getElementById(id);
 let user = null, editor = false, scope = 'shared', books = [], filter = 'all';
 let unsubscribe = null, epoch = 0, loaded = false, fromCache = true, editing = null, deleting = null;
+let authorFilter = '', reading = {}, unsubscribeReading = null;
+const readingLabels = { 'to-read': 'To read', reading: 'Reading', read: 'Read', collection: 'Collection' };
+const readingState = b => reading[scope + '-' + b.id] || '';
 let toastTimer, importing = false, saving = false;
 const canEdit = () => !!user && (scope === 'private' || editor);
 function showError(element, message) { element.textContent = message; element.hidden = !message; }
@@ -37,16 +40,20 @@ function render() {
   $('clear-search').hidden = !$('search').value;
   const query = normalize($('search').value).split(' ').filter(Boolean);
   const selectedShelf = $('shelf-filter').value;
-  const list = books.filter(b => (filter !== 'review' || b.status === 'review') &&
+  const readingFilter = $('reading-filter').value;
+  $('author-filter').hidden = !authorFilter;
+  $('author-filter').textContent = authorFilter ? `Author: ${authorFilter} ×` : '';
+  const list = books.filter(b => (!authorFilter || normalize(b.a) === normalize(authorFilter)) &&
+    (!readingFilter || (readingFilter === 'unmarked' ? !readingState(b) : readingState(b) === readingFilter)) && (filter !== 'review' || b.status === 'review') &&
     (!selectedShelf || b.shelf === selectedShelf) && query.every(q => normalize(b.t + ' ' + b.a).includes(q)));
   const sort = $('sort').value;
   list.sort((a, b) => sort === 'author' ? a.a.localeCompare(b.a) || a.t.localeCompare(b.t) :
     sort === 'shelf' ? a.shelf.localeCompare(b.shelf) || a.t.localeCompare(b.t) :
     sort === 'recent' ? (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0) || b.id.localeCompare(a.id) : a.t.localeCompare(b.t));
-  $('book-grid').innerHTML = list.map(b => `<button class="book-card" data-id="${esc(b.id)}" aria-label="${esc(b.t)}, ${esc(shelfName(b.shelf))}"><h3>${esc(b.t)}</h3><p class="book-author">${esc(b.a)}</p>${b.d ? `<p class="book-description">${esc(b.d)}</p>` : ''}<span class="card-meta"><span class="shelf-label">${esc(shelfName(b.shelf))}</span>${b.status === 'review' ? '<span class="review-label">Needs review</span>' : ''}</span></button>`).join('');
+  $('book-grid').innerHTML = list.map(b => `<article class="book-card" data-id="${esc(b.id)}" aria-label="${esc(b.t)}, ${esc(shelfName(b.shelf))}"><h3><button class="book-title-button">${esc(b.t)}</button></h3><button class="book-author author-link" data-author="${esc(b.a)}">${esc(b.a)}</button>${b.d ? `<p class="book-description">${esc(b.d)}</p>` : ''}<span class="card-meta"><span class="shelf-label">${esc(shelfName(b.shelf))}</span>${b.status === 'review' ? '<span class="review-label">Needs review</span>' : ''}${readingState(b) ? `<span class="reading-label">${readingLabels[readingState(b)]}</span>` : ''}</span></article>`).join('');
   $('total-count').textContent = loaded ? books.length : '—';
   $('result-count').textContent = loaded ? `${list.length} of ${books.length} ${books.length === 1 ? 'book' : 'books'}` : 'Loading books…';
-  const hasFilters = !!query.length || !!selectedShelf || filter !== 'all';
+  const hasFilters = !!authorFilter || !!readingFilter || !!query.length || !!selectedShelf || filter !== 'all';
   $('empty-state').hidden = !loaded || !!list.length || !$('catalog-error').hidden;
   $('empty-title').textContent = hasFilters ? 'No matching books.' : scope === 'private' ? 'Your next chapter starts here.' : 'The shared shelves are being prepared.';
   $('empty-description').textContent = hasFilters ? 'Try a different title, author, or shelf.' : scope === 'private' ? 'Add your first book, or import a catalog you already have.' : canEdit() ? 'Add a book or import the existing catalog to get started.' : 'Check back soon for the first books in the shared catalog.';
@@ -79,7 +86,7 @@ function subscribe() {
 }
 function setScope(next) {
   if (scope === next || importing || saving) return;
-  scope = next; filter = 'all'; $('search').value = ''; $('shelf-filter').value = ''; closeDialogs(); subscribe();
+  scope = next; authorFilter = ''; $('reading-filter').value = ''; filter = 'all'; $('search').value = ''; $('shelf-filter').value = ''; closeDialogs(); subscribe();
 }
 $('shared-tab').onclick = () => setScope('shared'); $('private-tab').onclick = () => setScope('private');
 $('retry-button').onclick = subscribe;
@@ -89,9 +96,11 @@ for (const id of ['shelf-filter', 'edit-shelf']) {
 }
 initializeSelects();
 $('clear-search').onclick = () => { $('search').value = ''; render(); $('search').focus(); };
-for (const id of ['search', 'sort', 'shelf-filter']) $(id).addEventListener(id === 'search' ? 'input' : 'change', render);
+for (const id of ['search', 'sort', 'shelf-filter', 'reading-filter']) $(id).addEventListener(id === 'search' ? 'input' : 'change', render);
 document.querySelectorAll('[data-filter]').forEach(el => el.onclick = () => { filter = el.dataset.filter; render(); });
-$('clear-filters').onclick = () => { $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; render(); };
+$('author-filter').onclick = () => { authorFilter = ''; render(); };
+function chooseAuthor(author) { authorFilter = author; $('search').value = ''; $('shelf-filter').value = ''; $('reading-filter').value = ''; filter = 'all'; closeDialogs(); render(); $('author-filter').focus(); }
+$('clear-filters').onclick = () => { authorFilter = ''; $('reading-filter').value = ''; $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; render(); };
 document.querySelectorAll('[data-close]').forEach(el => el.onclick = () => {
   if (saving && el.closest('dialog').id === 'edit-dialog') return;
   if (importing && el.closest('dialog').id === 'export-dialog') return;
@@ -106,6 +115,7 @@ $('sign-in-button').onclick = async () => {
 };
 finishRedirect().catch(error => showError($('sign-in-error'), message(error)));
 watchAuth(async next => {
+  unsubscribeReading?.(); unsubscribeReading = null; reading = {}; authorFilter = ''; $('reading-filter').value = '';
   unsubscribe?.(); unsubscribe = null; ++epoch;
   user = next; editor = false; books = []; loaded = false; editing = null; deleting = null;
   closeDialogs(); $('book-details').replaceChildren(); $('book-form').reset();
@@ -117,6 +127,7 @@ watchAuth(async next => {
   if (!next) return;
   subscribe();
   const uid = next.uid;
+  unsubscribeReading = watchReading(uid, records => { if (user?.uid === uid) { reading = records; render(); } }, error => { if (user?.uid === uid) toast('Could not load your reading status. ' + message(error)); });
   try { const allowed = await isSharedEditor(next); if (user?.uid === uid) { editor = allowed; render(); } }
   catch (error) { if (user?.uid === uid) toast('Could not load shared-editor permissions. ' + message(error)); }
 });
@@ -144,9 +155,23 @@ function openEdit(book) {
 }
 $('add-button').onclick = () => openEdit(null);
 $('book-grid').onclick = e => {
+  const author = e.target.closest('[data-author]'); if (author) { chooseAuthor(author.dataset.author); return; }
   const card = e.target.closest('[data-id]'); if (!card) return;
   const book = books.find(b => b.id === card.dataset.id); if (!book) return;
-  $('book-details').innerHTML = `<h2 id="book-title">${esc(book.t)}</h2><p class="detail-author">${esc(book.a)}</p><span class="shelf-label">${esc(shelfName(book.shelf))}</span><p class="detail-description">${book.d ? esc(book.d) : 'No description added yet.'}</p><p class="notice"><b>${book.status === 'review' ? 'Needs review' : 'Confirmed'}</b>${book.note ? '<br>' + esc(book.note) : ''}</p><div class="form-actions">${canEdit() ? '<button class="text-button" id="delete-button">Remove</button><button class="tonal-button" id="edit-button">Edit book</button>' : ''}${scope === 'shared' ? '<button class="primary-button" id="copy-button">Add to my library</button>' : ''}</div>`;
+  $('book-details').innerHTML = `<h2 id="book-title">${esc(book.t)}</h2><button class="detail-author author-link" id="detail-author">${esc(book.a)}</button><span class="shelf-label">${esc(shelfName(book.shelf))}</span><p class="detail-description">${book.d ? esc(book.d) : 'No description added yet.'}</p><p class="notice"><b>${book.status === 'review' ? 'Needs review' : 'Confirmed'}</b>${book.note ? '<br>' + esc(book.note) : ''}</p><label class="reading-control">My reading status <select id="book-reading"><option value="">No status</option>${Object.entries(readingLabels).map(([value, label]) => `<option value="${value}" ${readingState(book) === value ? 'selected' : ''}>${label}</option>`).join('')}</select></label><p class="muted">Optional. Only you can see your reading status.</p><p class="inline-error" id="reading-error" role="alert" hidden></p><div class="form-actions">${canEdit() ? '<button class="text-button" id="delete-button">Remove</button><button class="tonal-button" id="edit-button">Edit book</button>' : ''}${scope === 'shared' ? '<button class="primary-button" id="copy-button">Add to my library</button>' : ''}</div>`;
+  initializeSelects();
+  $('detail-author').onclick = () => chooseAuthor(book.a);
+  const readingTarget = { uid: user.uid, scope, id: book.id };
+  $('book-reading').onchange = async e => {
+    const select = e.target; const previous = reading[readingTarget.scope + '-' + book.id] || '';
+    select.disabled = true; syncSelects(); showError($('reading-error'), '');
+    try {
+      if (!navigator.onLine) throw new Error('Reconnect before saving your reading status.');
+      await saveReading(readingTarget.uid, readingTarget.scope, readingTarget.id, select.value);
+      if (user?.uid === readingTarget.uid) toast('Reading status saved.');
+    } catch (error) { if (user?.uid === readingTarget.uid && select.isConnected) { select.value = previous; showError($('reading-error'), message(error)); } }
+    finally { select.disabled = false; syncSelects(); }
+  };
   openDialog('book-dialog');
   if (canEdit()) {
     $('edit-button').onclick = () => { $('book-dialog').close(); openEdit(book); };

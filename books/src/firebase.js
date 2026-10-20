@@ -89,3 +89,13 @@ export async function importBooks(scope, uid, records, existingIds, progress = (
     progress(Math.min(offset + chunk.length, records.length));
   }
 }
+
+// Personal reading choices never modify the shared catalog.
+export function watchReading(uid, callback, onError) {
+  return onSnapshot(collection(db, 'booksUsers', uid, 'reading'), snapshot =>
+    callback(Object.fromEntries(snapshot.docs.map(d => [d.id, d.data().state]))), onError);
+}
+export function saveReading(uid, scope, id, state) {
+  const ref = doc(db, 'booksUsers', uid, 'reading', scope + '-' + id);
+  return state ? setDoc(ref, { state, updatedAt: serverTimestamp() }) : deleteDoc(ref);
+}

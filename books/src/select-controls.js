@@ -3,6 +3,7 @@ const controls = new Map();
 let sequence = 0;
 
 function createControl(select) {
+  const lifecycle = new AbortController();
   const number = ++sequence;
   const label = select.closest('label');
   const labelText = select.getAttribute('aria-label') || label?.querySelector('.sr-only')?.textContent || label?.firstChild?.textContent?.trim() || 'Choose an option';
@@ -131,19 +132,21 @@ function createControl(select) {
     }
   });
   menu.addEventListener('toggle', event => { if (event.newState === 'closed') close(); });
-  document.addEventListener('pointerdown', event => { if (opened && !wrapper.contains(event.target)) close(); });
+  document.addEventListener('pointerdown', event => { if (opened && !wrapper.contains(event.target)) close(); }, { signal: lifecycle.signal });
   trigger.addEventListener('blur', () => { if (opened) close(); });
-  window.addEventListener('resize', position);
-  window.addEventListener('scroll', event => { if (opened && !menu.contains(event.target)) position(); }, true);
-  window.visualViewport?.addEventListener('resize', position);
+  window.addEventListener('resize', position, { signal: lifecycle.signal });
+  window.addEventListener('scroll', event => { if (opened && !menu.contains(event.target)) position(); }, { capture: true, signal: lifecycle.signal });
+  window.visualViewport?.addEventListener('resize', position, { signal: lifecycle.signal });
   select.addEventListener('change', sync);
   select.form?.addEventListener('reset', () => queueMicrotask(sync));
-  new MutationObserver(sync).observe(select, { attributes: true, attributeFilter: ['disabled'] });
+  const observer = new MutationObserver(sync);
+  observer.observe(select, { attributes: true, attributeFilter: ['disabled'] });
   sync();
-  return { sync, close };
+  return { sync, close, dispose() { close(); observer.disconnect(); lifecycle.abort(); clearTimeout(typeTimer); } };
 }
 
 export function initializeSelects() {
+  controls.forEach((control, select) => { if (!select.isConnected) { control.dispose(); controls.delete(select); } });
   document.querySelectorAll('select').forEach(select => { if (!controls.has(select)) controls.set(select, createControl(select)); });
 }
 export function syncSelects() { controls.forEach(control => control.sync()); }

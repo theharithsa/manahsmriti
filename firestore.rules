@@ -38,6 +38,15 @@ service cloud.firestore {
       allow update: if signedIn() && request.auth.uid == uid && validUpdate(id);
       allow delete: if signedIn() && request.auth.uid == uid;
     }
+    match /booksUsers/{uid}/reading/{id} {
+      allow read, delete: if signedIn() && request.auth.uid == uid;
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && id.matches('^(shared|private)-[a-zA-Z0-9_-]{1,128}$')
+        && request.resource.data.keys().hasAll(['state', 'updatedAt'])
+        && request.resource.data.keys().hasOnly(['state', 'updatedAt'])
+        && request.resource.data.state in ['to-read', 'reading', 'read', 'collection']
+        && request.resource.data.updatedAt == request.time;
+    }
     match /booksSettings/access {
       allow get: if signedIn();
       // Editor permissions are provisioned through the authenticated admin script.

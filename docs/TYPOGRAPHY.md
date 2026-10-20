@@ -27,3 +27,7 @@ The layout retains its Material-inspired type sizes and component spacing. These
 All text fields, textareas, select triggers, menus, and option text explicitly use Ancizar Serif at 16 px. They share surface colors, border radii, focus rings, validation styling, and light/dark theme tokens. Book display titles and H1 headings retain their dedicated font families.
 
 Select controls use a keyboard-accessible select-only combobox with themed listbox options, while preserving the underlying native select values for form submission. Arrow keys, Home/End, type-ahead, Enter, Escape, and Tab are supported. Menus render above modal dialogs and stay inside the viewport. Browser-default import confirmation and form validation bubbles are replaced by in-app dialogs and inline validation messages.
+
+Author names are underlined text buttons on cards and book details. Selecting one applies an exact, normalized author filter; the author chip clears it. Author A–Z is also available in the sort menu.
+
+Reading status is optional: To read, Reading, Read, or Collection. It is changed from book details, shown on cards, and can be filtered. Choosing No status clears it. Choices are stored independently of catalog data at `booksUsers/{uid}/reading/{scope}-{bookId}` and sync only for their owner. Shared catalog readers can mark books without copying or editing shared records. Shared and private entries have independent statuses; catalog imports/exports do not transfer personal reading choices.

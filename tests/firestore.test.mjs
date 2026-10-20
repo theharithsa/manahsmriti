@@ -76,3 +76,18 @@ test('creation timestamps cannot be changed on update', async () => {
 test('unrelated app collections are denied by default', async () => {
   await assertFails(setDoc(doc(context('alice'), 'otherApp/private'), { value: 1 }));
 });
+
+test('reading status is optional personal data, isolated even from shared editors', async () => {
+  const ref = doc(context('alice'), 'booksUsers/alice/reading/shared-original');
+  for (const state of ['to-read', 'reading', 'read', 'collection']) {
+    await assertSucceeds(setDoc(ref, { state, updatedAt: serverTimestamp() }));
+  }
+  await assertFails(getDoc(doc(context('bob'), ref.path)));
+  await assertFails(getDoc(doc(context('editor', 'theharithsa@gmail.com'), ref.path)));
+  await assertFails(getDoc(doc(env.unauthenticatedContext().firestore(), ref.path)));
+  await assertFails(setDoc(doc(context('bob'), ref.path), { state: 'read', updatedAt: serverTimestamp() }));
+  await assertFails(setDoc(ref, { state: 'invalid', updatedAt: serverTimestamp() }));
+  await assertFails(setDoc(ref, { state: 'read', extra: true, updatedAt: serverTimestamp() }));
+  await assertFails(setDoc(ref, { state: 'read', updatedAt: Timestamp.fromMillis(0) }));
+  await assertSucceeds(deleteDoc(ref));
+});
