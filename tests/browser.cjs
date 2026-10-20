@@ -54,7 +54,26 @@ async function main() {
       const existing = popup.getByText(email, { exact: true });
       if (await existing.count()) await existing.first().click();
       else { await popup.locator('#add-account-button').click(); await popup.locator('#email-input').fill(email); await popup.locator('#display-name-input').fill(email.split('@')[0]); await popup.locator('#profile-photo-input').fill('https://lh3.googleusercontent.com/test-avatar'); await popup.locator('#sign-in').click(); }
+      await page.locator('#welcome-screen').waitFor({ state: 'visible' });
+      assert.equal(await page.locator('#library-screen').isVisible(), false);
+      await page.waitForFunction(() => document.getElementById('welcome-text').textContent.length > 0);
+      assert.match(await page.locator('.welcome-thought').evaluate(el => getComputedStyle(el).fontFamily), /Source Code Pro/);
+      const thought = await page.locator('#welcome-announcement').textContent();
+      assert.ok(thought.length > 10);
+      if (email === 'theharithsa@gmail.com') {
+        await page.screenshot({ path: 'artifacts/typewriter-welcome-desktop.png' });
+        // The table is fetched/rendered before the welcome finishes.
+        await page.waitForFunction(() => document.querySelectorAll('#book-rows tr').length > 0);
+        assert.equal(await page.locator('#welcome-screen').isVisible(), true);
+      } else if (await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        assert.equal(await page.locator('#welcome-text').textContent(), thought);
+        assert.equal(await page.locator('.type-cursor').evaluate(el => getComputedStyle(el).display), 'none');
+        await page.screenshot({ path: 'artifacts/typewriter-reduced-motion-mobile.png' });
+      } else {
+        await page.locator('#skip-welcome').click();
+      }
       await page.locator('#library-screen').waitFor({ state: 'visible' });
+      assert.equal(await page.locator('#welcome-screen').isVisible(), false);
       await page.waitForFunction(() => document.getElementById('sync-status').textContent.includes('Up to date'));
     }
     const ownerContext = await browser.newContext({ viewport: { width: 1440, height: 1100 } });
@@ -109,7 +128,7 @@ async function main() {
     await owner.locator('#save-button').click(); await owner.locator('#edit-dialog').waitFor({ state: 'hidden' });
     await owner.reload(); await owner.waitForFunction(() => document.getElementById('sync-status').textContent.includes('Up to date'));
     await owner.locator('#search').fill('Deep Work'); await owner.locator('.book-title-button').click(); assert.match(await owner.locator('.detail-description').textContent(), /Updated by/); await owner.keyboard.press('Escape');
-    const readerContext = await browser.newContext({ viewport: { width: 390, height: 1000 } });
+    const readerContext = await browser.newContext({ viewport: { width: 390, height: 1000 }, reducedMotion: 'reduce' });
     const reader = await newPage(readerContext); await signIn(reader, 'reader@example.com');
     assert.equal(await reader.locator('#add-button').isVisible(), false);
     assert.equal(await reader.locator('#cards-view').getAttribute('aria-pressed'), 'true');
@@ -258,8 +277,17 @@ async function main() {
     await owner.evaluate(() => document.getElementById('account-photo').src = 'https://lh3.googleusercontent.com/bad-avatar');
     await owner.locator('#account-initial').waitFor({ state: 'visible' });
     assert.equal(await owner.locator('#account-photo').isVisible(), false);
+    const previousThought = await owner.evaluate(() => sessionStorage.getItem('books-last-thought'));
+    await owner.reload();
+    await owner.locator('#welcome-screen').waitFor({ state: 'visible' });
+    assert.notEqual(await owner.locator('#welcome-announcement').textContent(), previousThought);
+    await owner.locator('#account-button').click(); await owner.locator('#sign-out-button').click();
+    await owner.locator('#sign-in-screen').waitFor({ state: 'visible' });
+    await owner.waitForTimeout(3000);
+    assert.equal(await owner.locator('#library-screen').isVisible(), false);
+    assert.equal(await owner.locator('#welcome-screen').isVisible(), false);
     assert.deepEqual(errors, []);
-    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, compact chips, table/card switching, sortable table headers, pagination and saved page size, quick reading status, profile avatar/fallback, 5 responsive widths, dark theme and sign-out clearing.');
+    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, compact chips, table/card switching, sortable table headers, pagination and saved page size, quick reading status, profile avatar/fallback, typewriter welcome with background catalog loading, skip, reduced motion, quote rotation and sign-out cancellation, 5 responsive widths, dark theme and sign-out clearing.');
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); await env.cleanup(); }
 }
 main().catch(error => { console.error(error); process.exit(1); });

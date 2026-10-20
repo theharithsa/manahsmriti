@@ -85,3 +85,16 @@ textarea{scrollbar-width:thin;scrollbar-color:var(--outline) transparent}
 
 @media(min-width:761px){.filters-dialog{margin:0;position:fixed;max-height:calc(100dvh - 32px)}.filters-dialog::backdrop{background:#0002}}
 @media(max-width:760px){.filter-chip,#author-filter,.sort-control .select-trigger,.view-switch button,.catalog-table th button{min-height:44px}}
+
+/* A short, skippable welcome; no fixed loading delay or looping quotes. */
+.welcome-screen{min-height:calc(100dvh - 89px);display:grid;place-items:center;padding:48px clamp(24px,6vw,80px)}
+.welcome-copy{width:min(100%,760px)}
+.welcome-thought{font:400 clamp(26px,4vw,42px)/1.4 'Source Code Pro Variable','Source Code Pro',monospace;letter-spacing:-1px;margin:24px 0;min-height:4.2em;overflow-wrap:anywhere;text-wrap:balance}
+.type-cursor{display:inline-block;color:var(--primary);font-size:.85em;animation:cursor-blink .9s step-end infinite;vertical-align:baseline}
+.welcome-caption{font-size:16px;color:var(--muted);margin-bottom:16px}.welcome-copy>.text-button{padding-left:0;padding-right:0;border-radius:0;font-size:15px;min-height:44px}
+.library-arrive{animation:library-arrive .24s ease-out both}#library-title:focus{outline:none}
+.static-welcome .type-cursor{display:none}
+@keyframes cursor-blink{0%,45%{opacity:1}46%,100%{opacity:0}}
+@keyframes library-arrive{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.welcome-screen{min-height:calc(100dvh - 77px)}.welcome-thought{letter-spacing:-.6px;min-height:5.6em}}
+@media(prefers-reduced-motion:reduce){.type-cursor{animation:none;display:none}.library-arrive{animation:none}}

@@ -2,11 +2,13 @@ import '@fontsource-variable/caveat';
 import '@fontsource-variable/ancizar-serif';
 import '@fontsource-variable/source-code-pro';
 import './styles.css';
+import { createWelcome } from './welcome.js';
 import { initializeSelects, syncSelects, closeSelects } from './select-controls.js';
 import { watchAuth, login, finishRedirect, logout, isSharedEditor, watchBooks, saveBook, removeBook, importBooks, copyToPrivate, watchReading, saveReading } from './firebase.js';
 import { SHELVES, shelfName, escapeHTML as esc, normalize, cleanBook, parseCatalog, csvCell } from './catalog.js';
 
 const $ = id => document.getElementById(id);
+const welcome = createWelcome({ screen: $('welcome-screen'), text: $('welcome-text'), announcement: $('welcome-announcement'), library: $('library-screen'), skip: $('skip-welcome'), heading: $('library-title') });
 let user = null, editor = false, scope = 'shared', books = [], filter = 'all';
 let unsubscribe = null, epoch = 0, loaded = false, fromCache = true, editing = null, deleting = null;
 let authorFilter = '', reading = {}, unsubscribeReading = null;
@@ -172,12 +174,13 @@ $('sign-in-button').onclick = async () => {
 };
 finishRedirect().catch(error => showError($('sign-in-error'), message(error)));
 watchAuth(async next => {
+  welcome.cancel();
   unsubscribeReading?.(); unsubscribeReading = null; reading = {}; authorFilter = ''; $('reading-filter').value = '';
   unsubscribe?.(); unsubscribe = null; ++epoch;
   user = next; editor = false; books = []; loaded = false; editing = null; deleting = null;
   closeDialogs(); $('book-details').replaceChildren(); $('book-form').reset();
   $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; scope = 'shared'; page = 1; quickReading = null; updateAuthors();
-  $('boot-state').hidden = true; $('sign-in-screen').hidden = !!next; $('library-screen').hidden = !next; $('account-button').hidden = !next;
+  $('boot-state').hidden = true; $('sign-in-screen').hidden = !!next; $('library-screen').hidden = true; $('account-button').hidden = !next;
   $('account-email').textContent = next?.email || ''; $('account-label').textContent = next?.displayName?.split(' ')[0] || 'Account';
   const photo = $('account-photo'); photo.hidden = true; photo.removeAttribute('src'); $('account-initial').hidden = false;
   photo.onload = () => { photo.hidden = false; $('account-initial').hidden = true; };
@@ -187,6 +190,7 @@ watchAuth(async next => {
   $('account-initial').textContent = (next?.displayName || next?.email || 'M').slice(0, 1).toUpperCase();
   render();
   if (!next) return;
+  welcome.start();
   subscribe();
   const uid = next.uid;
   unsubscribeReading = watchReading(uid, records => { if (user?.uid === uid) { reading = records; render(); } }, error => { if (user?.uid === uid) toast('Could not load your reading status. ' + message(error)); });
@@ -321,4 +325,4 @@ if (!['light', 'dark'].includes(theme)) theme = matchMedia('(prefers-color-schem
 function applyTheme() { document.documentElement.dataset.theme = theme; $('theme-button').textContent = theme === 'dark' ? 'Light theme' : 'Dark theme'; $('theme-button').setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`); document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#14181f' : '#f8fafd'; }
 applyTheme();
 $('theme-button').onclick = () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(); try { localStorage.setItem('manahsmriti-theme', theme); } catch { /* Keep the current in-memory theme. */ } };
-document.addEventListener('keydown', e => { if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && user && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName) && document.activeElement.getAttribute('role') !== 'combobox') { e.preventDefault(); $('search').focus(); } });
+document.addEventListener('keydown', e => { if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && user && !$('library-screen').hidden && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName) && document.activeElement.getAttribute('role') !== 'combobox') { e.preventDefault(); $('search').focus(); } });
