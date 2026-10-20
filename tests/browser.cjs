@@ -75,9 +75,25 @@ async function main() {
     assert.equal(await owner.locator('.book-card h3').first().evaluate(el => getComputedStyle(el).fontWeight), '600');
     assert.match(await owner.locator('h1#library-title').evaluate(el => getComputedStyle(el).fontFamily), /Source Code Pro/);
     assert.match(await owner.locator('body').evaluate(el => getComputedStyle(el).fontFamily), /Ancizar Serif/);
+    const sortControl = owner.locator('#sort').locator('..').getByRole('combobox');
+    await sortControl.focus(); await owner.keyboard.press('ArrowDown');
+    assert.equal(await sortControl.getAttribute('aria-expanded'), 'true');
+    await owner.keyboard.press('End'); await owner.keyboard.press('Enter');
+    assert.equal(await owner.locator('#sort').inputValue(), 'shelf');
+    await owner.keyboard.press('Home'); await owner.keyboard.press('Enter');
+    assert.equal(await owner.locator('#sort').inputValue(), 'title');
+    await sortControl.click(); await owner.keyboard.press('Escape');
+    assert.equal(await sortControl.getAttribute('aria-expanded'), 'false');
     await owner.screenshot({ path: 'artifacts/shared-library-desktop.png' });
     await owner.locator('#search').fill('Cal Newport'); assert.equal(await owner.locator('.book-card').count(), 2);
+    await owner.locator('#clear-search').click(); assert.equal(await owner.locator('.book-card').count(), total);
     await owner.locator('#search').fill('Deep Work'); await owner.locator('.book-card').click(); await owner.locator('#edit-button').click();
+    await owner.getByRole('combobox', { name: /^Location:/ }).click();
+    await owner.getByRole('option', { name: 'Row 2 · Left', exact: true }).click();
+    assert.equal(await owner.locator('#edit-shelf').inputValue(), '2L');
+    assert.match(await owner.locator('#edit-dialog input[name="title"]').evaluate(el => getComputedStyle(el).fontFamily), /Ancizar Serif/);
+    assert.equal(await owner.locator('#edit-dialog input[name="title"]').evaluate(el => getComputedStyle(el).fontSize), '16px');
+    await owner.screenshot({ path: 'artifacts/edit-form-desktop.png' });
     await owner.locator('textarea[name="description"]').fill('Updated by the shared catalog editor.');
     await owner.locator('#save-button').click(); await owner.locator('#edit-dialog').waitFor({ state: 'hidden' });
     await owner.reload(); await owner.waitForFunction(() => document.getElementById('sync-status').textContent.includes('Up to date'));
@@ -92,7 +108,23 @@ async function main() {
     await reader.keyboard.press('Escape'); await reader.locator('#private-tab').click();
     await reader.waitForFunction(() => document.getElementById('sync-status').textContent.includes('Up to date'));
     assert.equal(await reader.locator('.book-card').count(), 1);
-    await reader.locator('#add-button').click(); await reader.locator('[name="title"]').fill('Private test <img src=x onerror=alert(1)>');
+    await reader.locator('#add-button').click();
+    await reader.locator('#save-button').click();
+    assert.match(await reader.locator('#save-error').textContent(), /Enter a book title/);
+    assert.equal(await reader.locator('#edit-dialog input[name="title"]').getAttribute('aria-invalid'), 'true');
+    const locationControl = reader.getByRole('combobox', { name: /^Location:/ });
+    await locationControl.click();
+    const locationMenu = reader.getByRole('listbox', { name: 'Location' });
+    const menuRect = await locationMenu.boundingBox();
+    assert.ok(menuRect.x >= 0 && menuRect.x + menuRect.width <= 390);
+    assert.ok(menuRect.y >= 0 && menuRect.y + menuRect.height <= 1000);
+    await reader.screenshot({ path: 'artifacts/edit-form-dropdown-mobile.png' });
+    await reader.getByRole('option', { name: 'Row 3 · Right', exact: true }).click();
+    assert.equal(await reader.locator('#edit-shelf').inputValue(), '3R');
+    const verificationControl = reader.getByRole('combobox', { name: /^Verification:/ });
+    await verificationControl.click(); await reader.keyboard.press('ArrowDown'); await reader.keyboard.press('Enter');
+    assert.equal(await reader.locator('#edit-dialog select[name="status"]').inputValue(), 'review');
+    await reader.locator('[name="title"]').fill('Private test <img src=x onerror=alert(1)>');
     await reader.locator('[name="author"]').fill('A Private Author'); await reader.locator('textarea[name="description"]').fill('Private description');
     await readerContext.setOffline(true); await reader.locator('#save-button').click();
     assert.match(await reader.locator('#save-error').textContent(), /Reconnect/);
@@ -111,8 +143,15 @@ async function main() {
     const downloadPromise = reader.waitForEvent('download'); await reader.locator('#download-json').click(); const download = await downloadPromise;
     const json = JSON.parse(fs.readFileSync(await download.path(), 'utf8')); assert.equal(json.length, 2);
     const file = [{ id: 'imported-private', t: 'Imported book', a: 'Import Author', d: 'A valid imported description.', note: '', shelf: '1R', status: 'review', added: true }];
-    reader.once('dialog', dialog => dialog.accept());
+
     await reader.locator('#import-json').setInputFiles({ name: 'catalog.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(file)) });
+    await reader.locator('#import-confirm-dialog').waitFor({ state: 'visible' });
+    await reader.locator('#cancel-import').click();
+    assert.equal(await reader.locator('.book-card').count(), 2);
+    await reader.locator('#import-json').setInputFiles({ name: 'catalog.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(file)) });
+    await reader.locator('#import-confirm-dialog').waitFor({ state: 'visible' });
+    await reader.screenshot({ path: 'artifacts/import-confirmation-mobile.png' });
+    await reader.locator('#accept-import').click();
     await reader.locator('#import-status').filter({ hasText: '1 books saved to Firestore.' }).waitFor();
     await reader.keyboard.press('Escape');
     await readerOtherDevice.waitForFunction(() => document.getElementById('result-count').textContent === '3 of 3 books');
@@ -128,12 +167,19 @@ async function main() {
     }
     await reader.setViewportSize({ width: 390, height: 1000 }); await reader.locator('#theme-button').click();
     await reader.screenshot({ path: 'artifacts/shared-library-dark.png' });
+    const shelfControl = reader.locator('#shelf-filter').locator('..').getByRole('combobox');
+    await shelfControl.click();
+    assert.equal(await reader.getByRole('listbox', { name: 'Filter by shelf' }).evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(29, 35, 45)');
+    const darkMenuRect = await reader.getByRole('listbox', { name: 'Filter by shelf' }).boundingBox();
+    assert.ok(darkMenuRect.y >= 0 && darkMenuRect.y + darkMenuRect.height <= 1000, 'Dark-mode menu stays within viewport');
+    await reader.screenshot({ path: 'artifacts/dropdown-dark-mobile.png' });
+    await reader.keyboard.press('Escape');
     await reader.locator('#map-button').click(); assert.equal(await reader.locator('.shelf-cell').count(), 10);
     await reader.locator('[data-shelf="5L"]').click(); assert.equal(await reader.locator('.book-card').count(), lowerLeft);
     await reader.locator('#account-button').click(); await reader.locator('#sign-out-button').click();
     await reader.locator('#sign-in-screen').waitFor({ state: 'visible' }); assert.equal(await reader.locator('.book-card').count(), 0);
     assert.deepEqual(errors, []);
-    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles and loading, 5 responsive widths, dark theme and sign-out clearing.');
+    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles, custom select keyboard navigation, inline form validation, in-app import confirmation, themed controls, 5 responsive widths, dark theme and sign-out clearing.');
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); await env.cleanup(); }
 }
 main().catch(error => { console.error(error); process.exit(1); });

@@ -2,6 +2,7 @@ import '@fontsource-variable/caveat';
 import '@fontsource-variable/ancizar-serif';
 import '@fontsource-variable/source-code-pro';
 import './styles.css';
+import { initializeSelects, syncSelects, closeSelects } from './select-controls.js';
 import { watchAuth, login, finishRedirect, logout, isSharedEditor, watchBooks, saveBook, removeBook, importBooks, copyToPrivate } from './firebase.js';
 import { SHELVES, shelfName, escapeHTML as esc, normalize, cleanBook, parseCatalog, csvCell } from './catalog.js';
 
@@ -25,13 +26,15 @@ function message(error) {
   return messages[error?.code] || error?.message || 'Something went wrong. Please try again.';
 }
 function toast(text) { $('toast').textContent = text; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true, 5000); }
-function closeDialogs() { document.querySelectorAll('dialog[open]').forEach(d => d.close()); }
+function closeDialogs() { closeSelects(); document.querySelectorAll('dialog[open]').forEach(d => d.close()); }
 function openDialog(id) { $(id).showModal(); }
 function networkStatus() {
   $('sync-status').textContent = !navigator.onLine ? 'Offline · reconnect to save changes' : fromCache ? 'Connecting to cloud…' : 'Up to date in Firestore';
 }
 window.addEventListener('online', networkStatus); window.addEventListener('offline', networkStatus);
 function render() {
+  syncSelects();
+  $('clear-search').hidden = !$('search').value;
   const query = normalize($('search').value).split(' ').filter(Boolean);
   const selectedShelf = $('shelf-filter').value;
   const list = books.filter(b => (filter !== 'review' || b.status === 'review') &&
@@ -84,6 +87,8 @@ const shelfOptions = ['unsorted', ...SHELVES];
 for (const id of ['shelf-filter', 'edit-shelf']) {
   for (const shelf of shelfOptions) { const option = document.createElement('option'); option.value = shelf; option.textContent = shelfName(shelf); $(id).append(option); }
 }
+initializeSelects();
+$('clear-search').onclick = () => { $('search').value = ''; render(); $('search').focus(); };
 for (const id of ['search', 'sort', 'shelf-filter']) $(id).addEventListener(id === 'search' ? 'input' : 'change', render);
 document.querySelectorAll('[data-filter]').forEach(el => el.onclick = () => { filter = el.dataset.filter; render(); });
 $('clear-filters').onclick = () => { $('search').value = ''; $('shelf-filter').value = ''; filter = 'all'; render(); };
@@ -133,6 +138,8 @@ function openEdit(book) {
   $('edit-title').textContent = book ? 'Edit book' : 'Add a book';
   $('edit-destination').textContent = scope === 'shared' ? 'Saving to the shared catalog. Everyone who signs in can see this book.' : 'Saving to your private library. Only you can see this book.';
   if (book) { f.elements.title.value = book.t; f.elements.author.value = book.a; f.elements.description.value = book.d; f.elements.shelf.value = book.shelf; f.elements.status.value = book.status; }
+  syncSelects();
+  for (const input of f.querySelectorAll('[aria-invalid]')) input.removeAttribute('aria-invalid');
   openDialog('edit-dialog');
 }
 $('add-button').onclick = () => openEdit(null);
@@ -158,6 +165,11 @@ $('book-form').onsubmit = async e => {
   showError($('save-error'), '');
   try {
     if (!navigator.onLine) throw new Error('Reconnect before saving. Your form has been kept open.');
+    for (const name of ['title', 'author']) f.elements[name].setAttribute('aria-invalid', String(!f.elements[name].value.trim()));
+    if (!f.elements.title.value.trim() || !f.elements.author.value.trim()) {
+      f.elements[!f.elements.title.value.trim() ? 'title' : 'author'].focus();
+      throw new Error('Enter a book title and author to continue.');
+    }
     const data = cleanBook({ t: f.elements.title.value, a: f.elements.author.value, d: f.elements.description.value, shelf: f.elements.shelf.value, status: f.elements.status.value, added: target.original?.added ?? true,
       note: f.elements.status.value === target.original?.status ? target.original.note : f.elements.status.value === 'confirmed' ? 'Confirmed by a catalog editor.' : 'Awaiting title, author, or location verification.' });
     saving = true; $('save-button').disabled = true; $('save-button').textContent = 'Saving…';
@@ -177,6 +189,17 @@ function download(name, content, type) { const url = URL.createObjectURL(new Blo
 $('export-button').onclick = () => { $('export-scope').textContent = scope === 'shared' ? 'Exporting the shared catalog.' : 'Exporting your private library.'; $('import-status').textContent = ''; openDialog('export-dialog'); };
 $('download-json').onclick = () => download(`manahsmriti-${scope}-books.json`, JSON.stringify(books.map(b => ({ id: b.id, ...cleanBook(b) })), null, 2), 'application/json');
 $('download-csv').onclick = () => { const rows = [['Title', 'Author', 'Shelf', 'Verification', 'Description', 'Notes'], ...books.map(b => [b.t, b.a, shelfName(b.shelf), b.status, b.d, b.note])]; download(`manahsmriti-${scope}-books.csv`, '\uFEFF' + rows.map(r => r.map(csvCell).join(',')).join('\r\n'), 'text/csv;charset=utf-8'); };
+function confirmImport(count, destination) {
+  $('import-confirm-description').textContent = `Import ${count} ${count === 1 ? 'book' : 'books'} into ${destination === 'shared' ? 'the shared catalog' : 'your private library'}? Matching book IDs will be updated. Other books will be kept.`;
+  const dialog = $('import-confirm-dialog');
+  dialog.returnValue = '';
+  return new Promise(resolve => {
+    dialog.addEventListener('close', () => resolve(dialog.returnValue === 'import'), { once: true });
+    dialog.showModal();
+  });
+}
+$('accept-import').onclick = () => $('import-confirm-dialog').close('import');
+$('cancel-import').onclick = () => $('import-confirm-dialog').close('cancel');
 $('import-json').onchange = async e => {
   const file = e.target.files[0]; if (!file || !canEdit() || importing) return;
   const target = { scope, uid: user.uid, ids: new Set(books.map(b => b.id)) };
@@ -184,7 +207,7 @@ $('import-json').onchange = async e => {
     if (!navigator.onLine) throw new Error('Reconnect before importing a catalog.');
     if (file.size > 10000000) throw new Error('Choose a backup smaller than 10 MB.');
     const rows = parseCatalog(JSON.parse(await file.text()));
-    if (!confirm(`Import ${rows.length} books into ${scope === 'shared' ? 'the shared catalog' : 'your private library'}? Matching IDs will be updated; other books will be kept.`)) return;
+    if (!await confirmImport(rows.length, target.scope)) return;
     importing = true; $('import-json').disabled = true; $('sign-out-button').disabled = true;
     $('import-status').textContent = `Importing 0 of ${rows.length} books…`;
     await importBooks(target.scope, target.uid, rows, target.ids, done => { if (user?.uid === target.uid) $('import-status').textContent = `Imported ${done} of ${rows.length} books…`; });
@@ -198,4 +221,4 @@ if (!['light', 'dark'].includes(theme)) theme = matchMedia('(prefers-color-schem
 function applyTheme() { document.documentElement.dataset.theme = theme; $('theme-button').textContent = theme === 'dark' ? 'Light theme' : 'Dark theme'; $('theme-button').setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`); document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#14181f' : '#f8fafd'; }
 applyTheme();
 $('theme-button').onclick = () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(); try { localStorage.setItem('manahsmriti-theme', theme); } catch { /* Keep the current in-memory theme. */ } };
-document.addEventListener('keydown', e => { if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && user && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) { e.preventDefault(); $('search').focus(); } });
+document.addEventListener('keydown', e => { if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && user && !document.querySelector('dialog[open]') && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName) && document.activeElement.getAttribute('role') !== 'combobox') { e.preventDefault(); $('search').focus(); } });

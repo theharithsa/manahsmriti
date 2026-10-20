@@ -21,3 +21,9 @@ Sources:
 - [Font licenses bundled with the site](../books/public/font-licenses/)
 
 The layout retains its Material-inspired type sizes and component spacing. These custom font choices replace the earlier Roboto baseline at the user's request.
+
+## Forms and controls
+
+All text fields, textareas, select triggers, menus, and option text explicitly use Ancizar Serif at 16 px. They share surface colors, border radii, focus rings, validation styling, and light/dark theme tokens. Book display titles and H1 headings retain their dedicated font families.
+
+Select controls use a keyboard-accessible select-only combobox with themed listbox options, while preserving the underlying native select values for form submission. Arrow keys, Home/End, type-ahead, Enter, Escape, and Tab are supported. Menus render above modal dialogs and stay inside the viewport. Browser-default import confirmation and form validation bubbles are replaced by in-app dialogs and inline validation messages.
