@@ -1,4 +1,6 @@
-import '@fontsource-variable/roboto';
+import '@fontsource-variable/caveat';
+import '@fontsource-variable/ancizar-serif';
+import '@fontsource-variable/source-code-pro';
 import './styles.css';
 import { watchAuth, login, finishRedirect, logout, isSharedEditor, watchBooks, saveBook, removeBook, importBooks, copyToPrivate } from './firebase.js';
 import { SHELVES, shelfName, escapeHTML as esc, normalize, cleanBook, parseCatalog, csvCell } from './catalog.js';

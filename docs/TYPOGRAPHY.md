@@ -1,25 +1,23 @@
 # Typography
 
-The Books interface uses **Roboto**, the typeface specified by Google's Material 3 baseline type system and available on Google Fonts. The variable font files are bundled locally using `@fontsource-variable/roboto`, preserving their OFL license. The app does not depend on runtime font requests to Google.
+The interface uses the user's selected Google Fonts families, bundled locally with their SIL Open Font Licenses. No runtime Google Fonts requests are required.
 
-Official sources consulted:
+| Role | Family | Weight | Size / line height |
+| --- | --- | --- | --- |
+| Book titles on cards | Caveat | SemiBold (600) | 28 / 32 px |
+| Book title in details | Caveat | SemiBold (600) | 36 / 42 px |
+| H1 on desktop | Source Code Pro | Regular (400) | 57 / 64 px |
+| H1 on tablet | Source Code Pro | Regular (400) | 44 / 52 px |
+| H1 on phone | Source Code Pro | Regular (400) | 36 / 44 px |
+| Body, controls, other headings and labels | Ancizar Serif (UNAL) | Regular (400) / Medium (500) | Existing responsive hierarchy |
 
-- [Material 3 typography overview](https://m3.material.io/styles/typography/overview)
-- [Material 3 type-scale tokens](https://m3.material.io/styles/typography/type-scale-tokens)
-- [Google's Material Web reference typeface tokens](https://github.com/material-components/material-web/blob/main/tokens/versions/v0_192/_md-ref-typeface.scss), which specify Roboto for both brand and plain typefaces
-- [Google's Material Web type-scale tokens](https://github.com/material-components/material-web/blob/main/tokens/versions/v0_192/_md-sys-typescale.scss)
-- [Roboto on Google Fonts](https://fonts.google.com/specimen/Roboto)
-- [Google Fonts Roboto metadata and license](https://github.com/google/fonts/tree/main/ofl/roboto)
+Only actual H1 headings use Source Code Pro. Decorative panel text, author names, descriptions, navigation, dialogs, and form controls use Ancizar Serif. Book-title overrides apply to cards and the detail dialog at every viewport size.
 
-| Use | Size / line height | Weight |
-| --- | --- | --- |
-| Desktop display | 57 / 64 px | 400 |
-| Tablet display | 44 / 52 px | 400 |
-| Phone display | 36 / 44 px | 400 |
-| Large headline | 32 / 40 px | 400 |
-| Card title / dialog title | 22 / 28 px | 400 |
-| Body | 16 / 24 px | 400 |
-| Secondary body | 14 / 20 px | 400 |
-| Button / label | 14 / 20 px | 500 |
+Sources:
 
-Display text uses -0.25 px letter spacing. Body and title text use a restrained hierarchy, with spacing and weight carrying the design. Book cards have no decorative book icons or pretend covers.
+- [Caveat on Google Fonts](https://fonts.google.com/specimen/Caveat)
+- [Ancizar Serif on Google Fonts](https://fonts.google.com/specimen/Ancizar+Serif)
+- [Source Code Pro on Google Fonts](https://fonts.google.com/specimen/Source+Code+Pro)
+- [Font licenses bundled with the site](../books/public/font-licenses/)
+
+The layout retains its Material-inspired type sizes and component spacing. These custom font choices replace the earlier Roboto baseline at the user's request.

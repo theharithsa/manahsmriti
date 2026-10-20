@@ -18,7 +18,7 @@ The Books app has its own Firebase Hosting site, so future ideas can live alongs
 - Copy shared books to your private library.
 - Real-time Firestore synchronization between devices. A save is reported successful only after Firestore acknowledges it.
 - Search, sorting, shelf filters, a five-row wardrobe map, JSON import/export, and CSV export.
-- Text-only cards, responsive layouts, a light/dark theme, and locally served Roboto fonts based on Google's Material typography guidance. See [typography sources](docs/TYPOGRAPHY.md).
+- Text-only cards, responsive layouts, a light/dark theme, and locally served Caveat SemiBold book titles, Ancizar Serif interface text, and Source Code Pro H1 headings. See [typography sources](docs/TYPOGRAPHY.md).
 
 ## Photo inventory
 

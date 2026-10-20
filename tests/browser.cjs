@@ -68,7 +68,13 @@ async function main() {
     assert.equal(await owner.locator('.book-card').count(), total);
     assert.equal(await owner.locator('.book-card svg').count(), 0);
     await owner.evaluate(() => document.fonts.ready);
-    assert.equal(await owner.evaluate(() => document.fonts.check('16px "Roboto Variable"')), true);
+    for (const family of ['Caveat Variable', 'Ancizar Serif Variable', 'Source Code Pro Variable']) {
+      assert.equal(await owner.evaluate(family => document.fonts.check(`16px "${family}"`), family), true, family + ' loads');
+    }
+    assert.match(await owner.locator('.book-card h3').first().evaluate(el => getComputedStyle(el).fontFamily), /Caveat/);
+    assert.equal(await owner.locator('.book-card h3').first().evaluate(el => getComputedStyle(el).fontWeight), '600');
+    assert.match(await owner.locator('h1#library-title').evaluate(el => getComputedStyle(el).fontFamily), /Source Code Pro/);
+    assert.match(await owner.locator('body').evaluate(el => getComputedStyle(el).fontFamily), /Ancizar Serif/);
     await owner.screenshot({ path: 'artifacts/shared-library-desktop.png' });
     await owner.locator('#search').fill('Cal Newport'); assert.equal(await owner.locator('.book-card').count(), 2);
     await owner.locator('#search').fill('Deep Work'); await owner.locator('.book-card').click(); await owner.locator('#edit-button').click();
@@ -127,7 +133,7 @@ async function main() {
     await reader.locator('#account-button').click(); await reader.locator('#sign-out-button').click();
     await reader.locator('#sign-in-screen').waitFor({ state: 'visible' }); assert.equal(await reader.locator('.book-card').count(), 0);
     assert.deepEqual(errors, []);
-    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, Roboto loading, 5 responsive widths, dark theme and sign-out clearing.');
+    console.log('PASS browser: Google sign-in emulator, auth persistence, shared editor/reader permissions, shared edits, private CRUD, cross-device sync, account isolation, offline form retention, XSS escaping, JSON import/export, shelf map, requested font roles and loading, 5 responsive widths, dark theme and sign-out clearing.');
   } finally { await browser?.close(); await new Promise(resolve => server.close(resolve)); await env.cleanup(); }
 }
 main().catch(error => { console.error(error); process.exit(1); });
